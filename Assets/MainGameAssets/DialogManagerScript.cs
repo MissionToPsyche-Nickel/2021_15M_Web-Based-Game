@@ -24,6 +24,7 @@ public class DialogManagerScript : MonoBehaviour
         visibilityList = gameObject.GetComponentsInChildren<Transform>();
 
         AddDialog(null, "Null Man", "test");
+        AddDialog(null, "Null Man", "test 2: testing intensifies");
     }
 
     // Update is called once per frame
@@ -51,7 +52,10 @@ public class DialogManagerScript : MonoBehaviour
         titleTextbox.text = activeSnippet.title;
         textTextbox.text = activeSnippet.text;
 
-        gameObject.SetActive(true);
+        foreach (Transform t in visibilityList)
+        {
+            t.localScale = new Vector3(1, 1, 1);
+        }
     }
 
     public void NextDialogPressed()
@@ -73,6 +77,14 @@ public class DialogManagerScript : MonoBehaviour
             dialogQueue.Enqueue(new DialogSnippet(portrait, title, text));
         }
         UpdateDialog();
+    }
+
+    // this is for testing, should be deleted at some point
+    private static int testNumber = 1;
+    public void TestButtonPressed()
+    {
+        AddDialog(null, "Null Man", "That's number " + testNumber);
+        testNumber++;
     }
 }
 
