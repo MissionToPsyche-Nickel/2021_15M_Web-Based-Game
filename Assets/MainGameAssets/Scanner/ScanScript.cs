@@ -7,7 +7,8 @@ public class ScanScript : MonoBehaviour
 
     public Camera cam;
     public GameObject endOfTelescope;
-    public LineRenderer lineRenderer;
+    public LineRenderer lineRenderer1;
+    public LineRenderer lineRenderer2;
     public float maximumScanningRange;
 
     // Start is called before the first frame update
@@ -19,7 +20,8 @@ public class ScanScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        lineRenderer.SetPosition(0, endOfTelescope.transform.position);
+        lineRenderer1.SetPosition(0, endOfTelescope.transform.position);
+        lineRenderer2.SetPosition(0, endOfTelescope.transform.position);
         
         RaycastHit hit;
 
@@ -28,11 +30,14 @@ public class ScanScript : MonoBehaviour
 
         if (Physics.Raycast(rayMouse.origin, rayMouse.direction, out hit, maximumScanningRange)) {
             if (hit.collider) {
-                lineRenderer.SetPosition(1, hit.point);
+                lineRenderer1.SetPosition(1, hit.point);
+                lineRenderer2.SetPosition(1, hit.point);
             }
         }
         else {
             var position = rayMouse.GetPoint(maximumScanningRange); 
-            lineRenderer.SetPosition(1, position); }
+            lineRenderer1.SetPosition(1, position); 
+            lineRenderer2.SetPosition(1, position);
+            }
     }
 }
