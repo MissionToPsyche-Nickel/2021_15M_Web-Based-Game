@@ -23,6 +23,11 @@ public class SceneTransition : MonoBehaviour
         }
     }
 
+    public void SceneTransitionOnClick()
+    {
+        StartCoroutine(LoadNewScene());
+    }
+
     //Loads the new scene and plays the transition for it
     private IEnumerator LoadNewScene()
     {
