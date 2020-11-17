@@ -16,7 +16,7 @@ public class Control : MonoBehaviour
         //Will load the appropriate scene
     }
     public void closeJournalButtonClicked() {
-        StartCoroutine(LoadNewScene(0));
+        SceneManager.LoadScene(0);
     }
 
     /* This is used to go to page one if the player has more journal pages.
