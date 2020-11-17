@@ -1512,3 +1512,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2c1dbaa94485544bb6c6cb65f6202bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerLevel: 0
+  animator: {fileID: 1743725227}
