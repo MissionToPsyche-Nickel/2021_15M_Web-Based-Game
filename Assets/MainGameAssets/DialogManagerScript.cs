@@ -23,11 +23,11 @@ public class DialogManagerScript : MonoBehaviour
 
         visibilityList = gameObject.GetComponentsInChildren<Transform>();
 
-        AddDialog(null, "Tutorial Man", "Welcome to the game!\ni am Tutorial Man, and I will be guiding you through how to play.\nPress the arrow button to continue.");
+        AddDialog(null, "Tutorial Man", "Welcome to the game!\nI am Tutorial Man, and I will be guiding you through how to play.\nPress the arrow button to continue.");
         AddDialog(null, "Tutorial Man", "Your goal is to complete your journal of celestial objects by identifying them with your telescope.\nYou can open your journal with the button at the bottom left.");
         AddDialog(null, "Tutorial Man", "The telescope is how you identify celestial objects.\nYou can control it using the up and down arrow keys, or W and S.");
-        AddDialog(null, "Tutorial Man", "Be sure to stay focused on the object for a few seconds, otherwise you won't get a good look at it.");
-        AddDialog(null, "Tutorial Man", "Aftre you scan the object, you will be sent to a minigame.\nGood luck, and happy astronomy!");
+        AddDialog(null, "Tutorial Man", "Be sure to stay focused on the object for a few seconds while the progress bar fills up, otherwise you won't get a good look at it.");
+        AddDialog(null, "Tutorial Man", "After you scan the object, you will be sent to a minigame.\nGood luck, and happy astronomy!");
     }
 
     // Update is called once per frame
