@@ -1,3 +1,0 @@
-Fonts:
-
-- Blank journal page used Verdana 14 non bold
