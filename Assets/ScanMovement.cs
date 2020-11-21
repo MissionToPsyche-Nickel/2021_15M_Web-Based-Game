@@ -4,23 +4,16 @@ using UnityEngine;
 
 public class ScanMovement : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public GameObject scanner;
+    public int angle = 0;
+    public int min = 0;
+    public int max = 8;
 
-    // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W)) 
-        {
-                this.transform.Rotate(25 * -Vector3.right * Time.deltaTime, Space.Self);
-        }
-
-        if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
-        {
-                this.transform.Rotate(25 * Vector3.right * Time.deltaTime, Space.Self);
-        }
+        angle += Input.GetKey(KeyCode.DownArrow) ? 1 : 0;
+        angle += Input.GetKey(KeyCode.UpArrow) ? -1 : 0;
+        //angle = Mathf.Clamp(angle, min, max);
+        scanner.transform.eulerAngles = new Vector3(0, 0, angle);
     }
 }
