@@ -1,41 +1,52 @@
-﻿using System.CodeDom;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class ProgressBarAnim : MonoBehaviour
 {
 
-    public Animator animator;
-    private bool colliding;
+    public Slider progressBar;
+    public ScanMovement scanner;
+
+    private float progress;
+    private float increaseRate;
+    private float decreaseRate;
+    private bool transitioning;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        AdjustIncreaseRate(5);
+        AdjustDecreaseRate(10);
+        transitioning = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(colliding == true)
+        bool colliding = scanner.seeing;
+        float delta = (colliding ? increaseRate : -decreaseRate) * Time.deltaTime; // deltaTime is employed in case of variable framerate
+        progress = Mathf.Clamp01(progress + delta);
+        progressBar.value = progress;
+
+        if (progress == 1f)
         {
-            animator.SetBool("isActive", true);
-        }
-        if (colliding == false)
-        {
-            animator.SetBool("isActive", false);
+            if (!transitioning)
+            {
+                transitioning = true;
+                // no clue what the scene transition code is, but this latching code should prevent it from activating twice
+            }
         }
     }
 
-    // Starts playing the progress bar animation when the scan bar collides with an object.
-    void OnCollisionEnter(Collision collision)
+    // time is how long it should take to complete the scan, in seconds
+    public void AdjustIncreaseRate(int time)
     {
-        colliding = true;
+        increaseRate = 1f / time;
     }
 
-    //Reset the progress bar animation when the scan bar stops colliding with an object.
-    void OnCollisionExit(Collision collision)
+    // time is how long it should take for a full bar to completely deplete, in seconds
+    public void AdjustDecreaseRate(int time)
     {
-        colliding = false;
+        decreaseRate = 1f / time;
     }
 }
