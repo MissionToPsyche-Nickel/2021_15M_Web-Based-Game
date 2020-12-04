@@ -30,7 +30,7 @@ public class JournalButtonScript : MonoBehaviour
         int whatScene = 0;
         if(playerLevel == 0)
         {
-            whatScene = 6;
+            whatScene = 7;
         }
         animator.SetBool("SceneChange", true);
         yield return new WaitForSeconds(1.5f);
