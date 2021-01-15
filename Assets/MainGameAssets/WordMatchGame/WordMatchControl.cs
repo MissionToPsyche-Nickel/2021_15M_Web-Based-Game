@@ -6,22 +6,34 @@ public class WordMatchControl : MonoBehaviour
 {
     // Simple lock to prevent multiple word presses. When a word is clicked this is set to true. On clicking a definition will check if this is true before painting line.
     public bool wordWasClicked;
+    private Transform[] points;
 
+    public GameObject word1;
+    public GameObject definition1;
+
+    // The word and definition objects
+    private int[] selectedPair;
+    private int[] playerChoices;
+    private int[] answerKey;
+    
     // To create a line from current word to definition
     private LineRenderer lineRenderer;
-    public Transform endPosition;
-
-    Vector2 startPosition;
-    Vector2 mousePosition;
+    private Vector3 startPosition;
+    private Vector3 mousePosition;
+    private Vector3 endPosition;
 
 
     // Start is called before the first frame update
     void Start()
     {
         wordWasClicked = false;
-
         lineRenderer = GetComponent<LineRenderer>();
         lineRenderer.enabled = false;
+
+        // Simple arrays to hold player choices and answer key
+        selectedPair = new int[2] {0,0};
+        playerChoices = new int[6] {0,0,0,0,0,0};
+        answerKey = new int[] {1,1,0,0,0,0};
     }
 
     // Update is called once per frame
@@ -31,31 +43,29 @@ public class WordMatchControl : MonoBehaviour
     
     }
 
-    void makeLine() {
+    public void wordClicked(int wordNum) {
+        Debug.Log("Word" + wordNum + " clicked.");
+
+        // Set this value as first pair value and clear second pair value
+        selectedPair[0] = wordNum;
+        selectedPair[1] = 0;
+
+        
+        wordWasClicked = true;
+        startPosition = GameObject.Find("word" + wordNum).transform.position;
+        lineRenderer.SetPosition(0, startPosition);
+        lineRenderer.SetPosition(1, mousePosition);   
+
         if (!lineRenderer.enabled) {
             lineRenderer.enabled = true;
         }
-
-        lineRenderer.SetPosition(0, startPosition);
-        lineRenderer.SetPosition(1, mousePosition);
-    } 
-
-    public void firstWordClicked() {
-
-        /**
-        * 
-        Notes:
-        Overall scheme so far - See if this object is already connected to a definition. If not, attach lineRenderer to right outside edge of object and track mouse movement. The definition object should handle the logic of drawing the line on click. 
-                
-        */
-        wordWasClicked = true;
-
-        //set start position as edge of this object and then draw line
-        startPosition = Word1.transform;
-        makeLine();
+     
+        
+        // Set start position as edge of this object and then draw line
+        //makeLine();
     }
 
-    public void firstDefinitionClicked() {
-
+    public void definitionClicked(int defNum) {
+        Debug.Log("Definition" + defNum + " clicked");
     }
 }
