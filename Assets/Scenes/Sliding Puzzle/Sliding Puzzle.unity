@@ -276,6 +276,7 @@ GameObject:
   - component: {fileID: 1331285063}
   - component: {fileID: 1331285062}
   - component: {fileID: 1331285061}
+  - component: {fileID: 1331285065}
   m_Layer: 5
   m_Name: Sliding Puzzle Canvas
   m_TagString: Untagged
@@ -363,6 +364,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1331285065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1331285060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a904f7fe19961747a4d24587fc1c58c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boardSize: 4
+  prefabTile: {fileID: 3954864964836700707, guid: 36cb6f10835aa484fa0bd7b89335aba6, type: 3}
 --- !u!1 &1663181974
 GameObject:
   m_ObjectHideFlags: 0

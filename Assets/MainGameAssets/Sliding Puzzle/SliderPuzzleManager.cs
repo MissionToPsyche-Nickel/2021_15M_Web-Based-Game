@@ -26,19 +26,14 @@ public class SliderPuzzleManager : MonoBehaviour
         {
             for (int i = 0; i < boardSize; i++)
             {
-                int x = i + j * boardSize + 1;
-                if (x != boardSize * boardSize) // leave the last square with no transform
-                {
-                    boardState[i][j] = x;
-                    Transform display = Instantiate(prefabTile);
-                    display.GetComponentInChildren<Text>().text = x.ToString();
-                    boardDisplay[i][j] = display;
-                    display.SetParent(transform);
-                    display.GetComponent<Button>().onClick.AddListener(() => TryMoveTile(x));
-                }
+                int x = i + j * boardSize;
+                boardState[i][j] = 0;
+                Transform display = Instantiate(prefabTile);
+                boardDisplay[i][j] = display;
+                display.SetParent(transform);
+                display.GetComponent<Button>().onClick.AddListener(() => TrySpinTile(x));
             }
         }
-        boardState[boardSize - 1][boardSize - 1] = 0; // last spot needs to have a 0 to prevent undefined behavior
         RefreshPositions();
     }
 
@@ -63,6 +58,7 @@ public class SliderPuzzleManager : MonoBehaviour
                     float x = (i - dt) * gap + offset;
                     float y = (j - dt) * gap + offset;
                     display.localPosition = new Vector3(x, -y);
+                    display.localEulerAngles = new Vector3(0, 0, boardState[i][j] * -90);
                 }
             }
         }
@@ -73,45 +69,15 @@ public class SliderPuzzleManager : MonoBehaviour
         return false;
     }
 
-    void TryMoveTile(int id)
+    void TrySpinTile(int id)
     {
-        Vector2Int location = FindValue(id);
-        Vector2Int empty = FindValue(0);
-        if ((empty - location).sqrMagnitude == 1) // this determines if the tile and hole are next to each other
-        {
-            Swap(location, empty);
-            RefreshPositions();
-            VerifyCompleted();
-        }
-    }
-    
-    Vector2Int FindValue(int id)
-    {
-        if (id < 0 || id >= boardSize * boardSize)
-        {
-            return new Vector2Int(-1, -1);
-        }
-        bool nil = id == 0;
-        for (int j = 0; j < boardSize; j++)
-        {
-            for (int i = 0; i < boardSize; i++)
-            {
-                if (boardState[i][j] == id)
-                {
-                    return new Vector2Int(i, j);
-                }
-            }
-        }
-        return new Vector2Int(-1, -1);
-    }
+        int x = id % boardSize;
+        int y = id / boardSize;
 
-    void Swap(Vector2Int a, Vector2Int b)
-    {
-        int tempId = boardState[a.x][a.y];
-        Transform tempTrans = boardDisplay[a.x][a.y];
-        boardState[a.x][a.y] = boardState[b.x][b.y];
-        boardDisplay[a.x][a.y] = boardDisplay[b.x][b.y];
-        boardState[b.x][b.y] = tempId;
-        boardDisplay[b.x][b.y] = tempTrans;
+        // increment then modulo 4, since 0-3 is the set of rotations
+        boardState[x][y]++;
+        boardState[x][y] %= 4;
+
+        RefreshPositions();
     }
 }

@@ -78,7 +78,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: N
+  m_Text: 'A
+
+'
 --- !u!1 &7894223644722573608
 GameObject:
   m_ObjectHideFlags: 0
@@ -92,7 +94,7 @@ GameObject:
   - component: {fileID: 5166973622435798621}
   - component: {fileID: 1836360958583295315}
   m_Layer: 5
-  m_Name: Button
+  m_Name: SliderTile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
