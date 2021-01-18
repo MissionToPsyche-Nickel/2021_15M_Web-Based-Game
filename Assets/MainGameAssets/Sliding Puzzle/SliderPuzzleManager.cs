@@ -1,12 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class SliderPuzzleManager : MonoBehaviour
 {
     public int boardSize = 4;
-    public Transform prefabTile;
+    public RectTransform prefabTile;
 
     private int[][] boardState;
     private Transform[][] boardDisplay;
@@ -22,19 +23,23 @@ public class SliderPuzzleManager : MonoBehaviour
             boardDisplay[i] = new Transform[boardSize];
         }
 
+        float delta = 128.0f / boardSize;
         for (int j = 0; j < boardSize; j++)
         {
             for (int i = 0; i < boardSize; i++)
             {
                 int x = i + j * boardSize;
                 boardState[i][j] = 0;
-                Transform display = Instantiate(prefabTile);
+                RectTransform display = Instantiate(prefabTile);
+                display.offsetMin = new Vector2(-delta, -delta);
+                display.offsetMax = new Vector2(delta, delta);
                 boardDisplay[i][j] = display;
                 display.SetParent(transform);
                 display.GetComponent<Button>().onClick.AddListener(() => TrySpinTile(x));
             }
         }
         RefreshPositions();
+        LoadTexture(AssetDatabase.LoadAssetAtPath<Texture2D>("Assets/MainGameAssets/SpaceFront.png"));
     }
 
     // Update is called once per frame
@@ -57,7 +62,7 @@ public class SliderPuzzleManager : MonoBehaviour
                 {
                     float x = (i - dt) * gap + offset;
                     float y = (j - dt) * gap + offset;
-                    display.localPosition = new Vector3(x, -y);
+                    display.localPosition = new Vector3(x, y);
                     display.localEulerAngles = new Vector3(0, 0, boardState[i][j] * -90);
                 }
             }
@@ -79,5 +84,22 @@ public class SliderPuzzleManager : MonoBehaviour
         boardState[x][y] %= 4;
 
         RefreshPositions();
+    }
+
+    public void LoadTexture(Texture2D texture)
+    {
+        int width = texture.width / boardSize;
+        int height = texture.height / boardSize;
+
+        for (int j = 0; j < boardSize; j++)
+        {
+            for (int i = 0; i < boardSize; i++)
+            {
+                Texture2D tex = new Texture2D(width, height);
+                tex.SetPixels(texture.GetPixels(width * i, height * j, width, height));
+                tex.Apply();
+                boardDisplay[i][j].GetComponent<RawImage>().texture = tex;
+            }
+        }
     }
 }
