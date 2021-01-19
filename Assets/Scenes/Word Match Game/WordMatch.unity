@@ -175,7 +175,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c0d18b251828564e94f3aa0476d74b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wordWasClicked: 0
   word1: {fileID: 26796563}
   definition1: {fileID: 1145333961}
 --- !u!114 &26796566
@@ -253,8 +252,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 5465f30638e318c47805efa5ed824a3f, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -508,7 +507,7 @@ RectTransform:
   m_Children:
   - {fileID: 1586820090}
   m_Father: {fileID: 1555487456}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -590,8 +589,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: ecea291ad17281f47aa10561702e69e7, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -620,7 +619,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c0d18b251828564e94f3aa0476d74b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wordWasClicked: 0
   word1: {fileID: 1127424829}
   definition1: {fileID: 1145333961}
 --- !u!1 &789700913
@@ -656,7 +654,7 @@ RectTransform:
   m_Children:
   - {fileID: 951607605}
   m_Father: {fileID: 1555487456}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -675,7 +673,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c0d18b251828564e94f3aa0476d74b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wordWasClicked: 0
   word1: {fileID: 1127424829}
   definition1: {fileID: 789700913}
 --- !u!114 &789700916
@@ -753,8 +750,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 5465f30638e318c47805efa5ed824a3f, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -823,7 +820,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c0d18b251828564e94f3aa0476d74b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wordWasClicked: 0
   word1: {fileID: 902423498}
   definition1: {fileID: 1145333961}
 --- !u!114 &902423501
@@ -901,8 +897,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 5465f30638e318c47805efa5ed824a3f, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1027,7 +1023,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c0d18b251828564e94f3aa0476d74b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wordWasClicked: 0
   word1: {fileID: 1127424829}
   definition1: {fileID: 1145333961}
 --- !u!4 &968587808
@@ -1160,8 +1155,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 5465f30638e318c47805efa5ed824a3f, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1190,7 +1185,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c0d18b251828564e94f3aa0476d74b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wordWasClicked: 0
   word1: {fileID: 1127424829}
   definition1: {fileID: 1145333961}
 --- !u!1 &1145333961
@@ -1308,8 +1302,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 5465f30638e318c47805efa5ed824a3f, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1338,7 +1332,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c0d18b251828564e94f3aa0476d74b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wordWasClicked: 0
   word1: {fileID: 1127424829}
   definition1: {fileID: 1145333961}
 --- !u!1 &1241476206
@@ -1474,7 +1467,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c0d18b251828564e94f3aa0476d74b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wordWasClicked: 0
   word1: {fileID: 1127424829}
   definition1: {fileID: 1246476149}
 --- !u!114 &1246476152
@@ -1552,8 +1544,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 5465f30638e318c47805efa5ed824a3f, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1665,8 +1657,8 @@ RectTransform:
   - {fileID: 26796564}
   - {fileID: 1145333962}
   - {fileID: 1246476150}
-  - {fileID: 758698680}
   - {fileID: 789700914}
+  - {fileID: 758698680}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
