@@ -38,6 +38,7 @@ public class SliderPuzzleManager : MonoBehaviour
                 display.GetComponent<Button>().onClick.AddListener(() => TrySpinTile(x));
             }
         }
+        ShuffleBoard();
         RefreshPositions();
         LoadTexture(AssetDatabase.LoadAssetAtPath<Texture2D>("Assets/MainGameAssets/SpaceFront.png"));
     }
@@ -46,6 +47,17 @@ public class SliderPuzzleManager : MonoBehaviour
     void Update()
     {
         
+    }
+
+    void ShuffleBoard()
+    {
+        for (int j = 0; j < boardSize; j++)
+        {
+            for (int i = 0; i < boardSize; i++)
+            {
+                boardState[i][j] = Random.Range(0, 4);
+            }
+        }
     }
 
     void RefreshPositions()
