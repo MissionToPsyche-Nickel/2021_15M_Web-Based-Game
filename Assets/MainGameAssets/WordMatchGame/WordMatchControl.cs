@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class WordMatchControl : MonoBehaviour
 {
@@ -9,8 +10,8 @@ public class WordMatchControl : MonoBehaviour
     private static bool wordWasClicked;
     private Transform[] points;
 
-    public GameObject word1;
-    public GameObject definition1;
+    //public GameObject word1;
+    //public GameObject definition1;
 
     // The word and definition objects
     private static int selection;
@@ -23,10 +24,17 @@ public class WordMatchControl : MonoBehaviour
     private Vector3 mousePosition;
     private Transform endPosition;
 
+    // For player message if choices are incorrect
+    private TextMeshProUGUI successMessageText;
+    string successMessage;
+
     void Start() {
         wordWasClicked = false;
         selection = 0;
         playerChoices = new int[6] {1,0,2,0,3,0};
+        successMessage = ""; 
+        successMessageText = GameObject.Find("SuccessMessage").GetComponent<TextMeshProUGUI>();
+        successMessageText.text = successMessage;
     }
 
     // Update is called once per frame
@@ -109,8 +117,16 @@ public class WordMatchControl : MonoBehaviour
             }
             if (isCorrect) {
                 Debug.Log("All answers are correct.");
+
+                // Display success message to player then change scenes
+                successMessage = "Great Job!";
+                successMessageText.text = successMessage;
             } else {
                 Debug.Log("Wrong.");
+
+                // Display message to player that this was incorrect
+                successMessage = "Try Again";
+                successMessageText.text = successMessage;
             }
         }
         else {
