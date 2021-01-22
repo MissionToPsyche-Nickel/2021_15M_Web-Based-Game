@@ -99,13 +99,13 @@ public class DialogManagerScript : MonoBehaviour
     }
 
     //Not sure if these will work, for now need to clear playerPrefs manually
-    public void OnApplicationQuit() {
-        PlayerPrefs.DeleteAll();
-    }
+    // public void OnApplicationQuit() {
+    //     PlayerPrefs.DeleteAll();
+    // }
 
-    public void OnApplicationStart() {
-        PlayerPrefs.DeleteAll();
-    }
+    // public void OnApplicationStart() {
+    //     PlayerPrefs.DeleteAll();
+    // }
 }
 
 public class DialogSnippet
