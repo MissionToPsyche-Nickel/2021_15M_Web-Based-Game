@@ -10,6 +10,9 @@ public class WordMatchControl : MonoBehaviour
     private static bool wordWasClicked;
     private Transform[] points;
 
+    // The GameObject for Scene Transitions
+    private GameObject sceneTransition;
+
     //public GameObject word1;
     //public GameObject definition1;
 
@@ -29,6 +32,7 @@ public class WordMatchControl : MonoBehaviour
     string successMessage;
 
     void Start() {
+        sceneTransition = GameObject.Find("SceneTransitionHolder");
         wordWasClicked = false;
         selection = 0;
         playerChoices = new int[6] {1,0,2,0,3,0};
@@ -121,6 +125,7 @@ public class WordMatchControl : MonoBehaviour
                 // Display success message to player then change scenes
                 successMessage = "Great Job!";
                 successMessageText.text = successMessage;
+                sceneTransition.GetComponent<SceneTransition>().SceneTransitionOnClick("Main Game View");
             } else {
                 Debug.Log("Wrong.");
 
