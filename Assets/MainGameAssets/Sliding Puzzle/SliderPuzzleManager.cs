@@ -40,7 +40,7 @@ public class SliderPuzzleManager : MonoBehaviour
         }
         ShuffleBoard();
         RefreshPositions();
-        LoadTexture(AssetDatabase.LoadAssetAtPath<Texture2D>("Assets/MainGameAssets/SpaceFront.png"));
+        LoadTexture(AssetDatabase.LoadAssetAtPath<Texture2D>("Assets/Scenes/Sliding Puzzle/Possible Images/sun.jpg"));
     }
 
     // Update is called once per frame
