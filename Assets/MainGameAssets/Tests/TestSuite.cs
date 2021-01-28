@@ -9,7 +9,7 @@ namespace Tests
 {   private 
     public class TestSuite
     {
-        
+        //create a unit testing case for loading texture
         [UnityTest]
         public IEnumerator TestLoadTexture()
         {// expected result to compare in test
