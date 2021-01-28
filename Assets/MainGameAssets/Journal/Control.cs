@@ -32,7 +32,7 @@ public class Control : MonoBehaviour
     public void LoadingAPageWithName(string sceneName) {
         SceneManager.LoadScene("sceneName");
     }
-    private IEnumerator LoadNewScene(int whatScene)
+    private IEnumerator LoadNewScene(string whatScene)
     {
         animator.SetBool("SceneChange", true);
         yield return new WaitForSeconds(1.5f);
