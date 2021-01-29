@@ -40,7 +40,7 @@ public class SliderPuzzleManager : MonoBehaviour
         }
         ShuffleBoard();
         RefreshPositions();
-        LoadTexture(AssetDatabase.LoadAssetAtPath<Texture2D>("Assets/Scenes/Sliding Puzzle/Possible Images/sun.jpg"));
+        LoadRandomTexture();
     }
 
     // Update is called once per frame
@@ -96,6 +96,24 @@ public class SliderPuzzleManager : MonoBehaviour
         boardState[x][y] %= 4;
 
         RefreshPositions();
+    }
+
+    private static string[] textureOptions = {
+        "blazar.jpg",
+        "earth high contrast.jpg",
+        "earth moon.jpg",
+        "earth.jpg",
+        "jupiter auroras.jpg",
+        "sun.jpg"
+    };
+
+    public void LoadRandomTexture()
+    {
+        LoadTexture(
+            AssetDatabase.LoadAssetAtPath<Texture2D>(
+                "Assets/Scenes/Sliding Puzzle/Possible Images/" + textureOptions[Random.Range(0, textureOptions.Length)]
+            )
+        );
     }
 
     public void LoadTexture(Texture2D texture)
