@@ -6,7 +6,7 @@ using UnityEngine.TestTools;
 using UnityEngine.Assertions;
 
 namespace Tests
-{   private 
+{   
     public class TestSuite
     {
         //create a unit testing case for loading texture
@@ -22,5 +22,6 @@ namespace Tests
         // Use yield to skip a frame.
         yield return null;
         }
+
     }
 }
