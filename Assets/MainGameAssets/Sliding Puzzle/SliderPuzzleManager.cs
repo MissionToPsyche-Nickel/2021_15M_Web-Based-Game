@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class SliderPuzzleManager : MonoBehaviour
 {
+    private static string[] randomImages = null;
+
     public int boardSize = 4;
     public RectTransform prefabTile;
 
@@ -98,20 +100,12 @@ public class SliderPuzzleManager : MonoBehaviour
         RefreshPositions();
     }
 
-    private static string[] textureOptions = {
-        "blazar.jpg",
-        "earth high contrast.jpg",
-        "earth moon.jpg",
-        "earth.jpg",
-        "jupiter auroras.jpg",
-        "sun.jpg"
-    };
-
     public void LoadRandomTexture()
     {
+        PrepTextures();
         LoadTexture(
             AssetDatabase.LoadAssetAtPath<Texture2D>(
-                "Assets/Scenes/Sliding Puzzle/Possible Images/" + textureOptions[Random.Range(0, textureOptions.Length)]
+                randomImages[Random.Range(0, randomImages.Length)]
             )
         );
     }
@@ -129,6 +123,19 @@ public class SliderPuzzleManager : MonoBehaviour
                 tex.SetPixels(texture.GetPixels(width * i, height * j, width, height));
                 tex.Apply();
                 boardDisplay[i][j].GetComponent<RawImage>().texture = tex;
+            }
+        }
+    }
+
+    private void PrepTextures()
+    {
+        if (randomImages == null)
+        {
+            string[] GUIDs = AssetDatabase.FindAssets("t:Texture2D", new[] { "Assets/Scenes/Sliding Puzzle/Possible Images" });
+            randomImages = new string[GUIDs.Length];
+            for (int i = 0; i < randomImages.Length; i++)
+            {
+                randomImages[i] = AssetDatabase.GUIDToAssetPath(GUIDs[i]);
             }
         }
     }
