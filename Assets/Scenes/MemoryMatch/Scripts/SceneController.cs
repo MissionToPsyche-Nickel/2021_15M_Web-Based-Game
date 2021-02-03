@@ -10,6 +10,8 @@ public class SceneController : MonoBehaviour
     public const float offsetX = 3.5f;
     public const float offsetY = 2.5f;
 
+    //private bool buttonLock = false;
+
     [SerializeField] private MainTile originalTile;
     [SerializeField] private Sprite[] images;
 
@@ -111,5 +113,10 @@ public class SceneController : MonoBehaviour
     public void GameWon()
     {
         SceneManager.LoadScene("Main");
+    }
+
+    public void Restart()
+    {
+        SceneManager.LoadScene("MemoryGame");
     }
 }
