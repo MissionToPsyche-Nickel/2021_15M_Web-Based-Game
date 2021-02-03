@@ -22,6 +22,10 @@ namespace Tests
         // Use yield to skip a frame.
         yield return null;
         }
-
+        [UnityTest]
+        public IEnumerator TestLoadTexture()
+        {// Second test case
+            yield return null;
+        }
     }
 }
