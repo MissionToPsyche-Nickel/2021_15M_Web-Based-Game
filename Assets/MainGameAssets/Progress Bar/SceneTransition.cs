@@ -2,28 +2,31 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class SceneTransition : MonoBehaviour
 {
     public string whatScene;
     public Animator animator;
+    public Slider progressBar;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        progressBar.onValueChanged.AddListener(delegate { progressBarValueChange(); });
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.T))
+
+    }
+
+    private void progressBarValueChange()
+    {
+        if (progressBar.value == 1)
         {
-            StartCoroutine(LoadNewScene(whatScene));
-        }
-        if(Input.GetKeyDown(KeyCode.M))
-        {
-            StartCoroutine(LoadNewScene("Memory Match Game"));
+            StartCoroutine(LoadNewScene("MemoryGame"));
         }
     }
 

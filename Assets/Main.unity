@@ -446,6 +446,7 @@ GameObject:
   - component: {fileID: 289843223}
   - component: {fileID: 289843222}
   - component: {fileID: 289843221}
+  - component: {fileID: 289843224}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -518,6 +519,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &289843224
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 289843220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1269ab57ef9224e46b9cfab7a99b769a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  whatScene: 0
+  animator: {fileID: 1743725227}
+  progressBar: {fileID: 1333944612}
 --- !u!1 &415284722
 GameObject:
   m_ObjectHideFlags: 0
@@ -1703,7 +1719,6 @@ GameObject:
   - component: {fileID: 1743725229}
   - component: {fileID: 1743725228}
   - component: {fileID: 1743725227}
-  - component: {fileID: 1743725230}
   m_Layer: 5
   m_Name: Panel
   m_TagString: Untagged
@@ -1787,20 +1802,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1743725225}
   m_CullTransparentMesh: 0
---- !u!114 &1743725230
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1743725225}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1269ab57ef9224e46b9cfab7a99b769a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  whatScene: 1
-  animator: {fileID: 1743725227}
 --- !u!1 &1819355248
 GameObject:
   m_ObjectHideFlags: 0
