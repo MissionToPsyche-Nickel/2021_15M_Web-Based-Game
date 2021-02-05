@@ -37,11 +37,11 @@ public class SceneTransition : MonoBehaviour
     }
 
     //Loads the new scene and plays the transition for it
-    private IEnumerator LoadNewScene(string sceneName)
+    public IEnumerator LoadNewScene(string sceneName)
     {
         sceneTransition.SetBool("SceneChange", true);
         string theSceneName = sceneName;
         yield return new WaitForSeconds(1.5f);
         SceneManager.LoadScene(theSceneName);
     }
-    }
+}
