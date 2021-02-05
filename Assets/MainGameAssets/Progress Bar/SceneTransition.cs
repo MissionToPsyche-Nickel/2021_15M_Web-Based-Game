@@ -2,37 +2,46 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class SceneTransition : MonoBehaviour
 {
-    public int whatScene;
-    public Animator animator;
+    public string whatScene;
+    public Animator sceneTransition;
+    public Slider progressBar;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        progressBar.onValueChanged.AddListener(delegate { progressBarValueChange(); });
+        sceneTransition.SetBool("SceneChange", false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.T))
+
+    }
+
+    private void progressBarValueChange()
+    {
+        if (progressBar.value == 1)
         {
-            StartCoroutine(LoadNewScene());
+            StartCoroutine(LoadNewScene("MemoryGame"));
         }
     }
 
     public void SceneTransitionOnClick()
     {
-        StartCoroutine(LoadNewScene());
+        StartCoroutine(LoadNewScene("Mini-game Test"));
     }
 
     //Loads the new scene and plays the transition for it
-    private IEnumerator LoadNewScene()
+    private IEnumerator LoadNewScene(string sceneName)
     {
-        animator.SetBool("SceneChange", true);
+        sceneTransition.SetBool("SceneChange", true);
+        string theSceneName = sceneName;
         yield return new WaitForSeconds(1.5f);
-        SceneManager.LoadScene(whatScene);
+        SceneManager.LoadScene(theSceneName);
     }
-}
+    }
