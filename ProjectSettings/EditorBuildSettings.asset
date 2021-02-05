@@ -11,7 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Main.unity
     guid: f4f91ca0aad0a1846b4a08f878ed1ae4
-  - enabled: 1
+  - enabled: 0
     path: Assets/Transition Test Scene.unity
     guid: fbe801991c57ddb4ebb38064b878cc41
   - enabled: 1
@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Mini-Games/Memory Match Game.unity
     guid: ad5f725331410474d90f1fd41742fb9b
+  - enabled: 1
+    path: Assets/Scenes/MemoryMatch/Scenes/MemoryGame.unity
+    guid: bb10baddf04883c438753ef0ed82ffe5
   m_configObjects: {}

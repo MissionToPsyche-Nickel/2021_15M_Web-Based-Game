@@ -9,6 +9,7 @@ public class SceneController : MonoBehaviour
     public const int gridCols = 4;
     public const float offsetX = 3.5f;
     public const float offsetY = 2.5f;
+    public Animator sceneTransition;
 
     //private bool buttonLock = false;
 
@@ -20,6 +21,7 @@ public class SceneController : MonoBehaviour
     {
         //This is a reference for the position of the first tile and builds other positions based off of it.
         Vector3 startPos = originalTile.transform.position;
+        //sceneTransition.SetBool("SceneChange", false);
 
         int[] numbers = {0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5};
         numbers = ShuffleArray(numbers);
@@ -94,6 +96,8 @@ public class SceneController : MonoBehaviour
             {
                 promptLabel.text = "You Won!";
                 yield return new WaitForSeconds(1.5f);
+                sceneTransition.SetBool("SceneChange", true);
+                yield return new WaitForSeconds(1.5f);
                 GameWon();
             }
         }
@@ -115,8 +119,10 @@ public class SceneController : MonoBehaviour
         SceneManager.LoadScene("Main");
     }
 
-    public void Restart()
+    public IEnumerator Restart()
     {
+        sceneTransition.SetBool("SceneChange", true);
+        yield return new WaitForSeconds(1.5f);
         SceneManager.LoadScene("MemoryGame");
     }
 }
