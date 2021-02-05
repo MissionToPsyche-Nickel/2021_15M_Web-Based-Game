@@ -21,7 +21,6 @@ public class SceneController : MonoBehaviour
     {
         //This is a reference for the position of the first tile and builds other positions based off of it.
         Vector3 startPos = originalTile.transform.position;
-        //sceneTransition.SetBool("SceneChange", false);
 
         int[] numbers = {0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5};
         numbers = ShuffleArray(numbers);
