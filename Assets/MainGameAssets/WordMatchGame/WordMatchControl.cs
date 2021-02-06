@@ -13,8 +13,13 @@ public class WordMatchControl : MonoBehaviour
     // The GameObject for Scene Transitions
     private GameObject sceneTransition;
 
-    //public GameObject word1;
-    //public GameObject definition1;
+    public GameObject word1;
+    public GameObject word2;
+    public GameObject word3;
+    public GameObject definition1;
+    public GameObject definition2;
+    public GameObject definition3;
+    public GameObject startPositionHolder;
 
     // The word and definition objects
     private static int selection;
@@ -22,7 +27,7 @@ public class WordMatchControl : MonoBehaviour
     private int[] answerKey = new int[] {1,1,2,2,3,3};
     
     // To create a line from current word to definition
-    //private LineRenderer lineRenderer;
+    public LineRenderer lineRenderer;
     private Transform startPosition;
     private Vector3 mousePosition;
     private Transform endPosition;
@@ -32,6 +37,7 @@ public class WordMatchControl : MonoBehaviour
     string successMessage;
 
     void Start() {
+        startPosition = startPositionHolder.transform;
         sceneTransition = GameObject.Find("SceneTransitionHolder");
         wordWasClicked = false;
         selection = 0;
@@ -45,7 +51,15 @@ public class WordMatchControl : MonoBehaviour
     void Update()
     {
         // Track mouse position after player click
-        //mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);  
+        mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        // Create list of positions to store updated line renderer positions
+        List<Vector3> pos = new List<Vector3>();
+        pos.Add(word1.transform.position);
+        pos.Add(definition1.transform.position);
+        lineRenderer.startWidth = 1f;
+        lineRenderer.endWidth = 1f;
+        // Update the line renderer positions to the new ones from the list
+        lineRenderer.SetPositions(pos.ToArray());
     }
 
     public void word1Clicked() {
@@ -55,9 +69,9 @@ public class WordMatchControl : MonoBehaviour
         wordWasClicked = true;
         selection = 1;
 
-        /**
-        startPosition = word1.transform;
         
+        startPosition = word1.transform;
+        /**
         if (lineRenderer == null) {
             lineRenderer = gameObject.AddComponent<LineRenderer>();
         }
@@ -125,7 +139,7 @@ public class WordMatchControl : MonoBehaviour
                 // Display success message to player then change scenes
                 successMessage = "Great Job!";
                 successMessageText.text = successMessage;
-                sceneTransition.GetComponent<SceneTransition>().SceneTransitionOnClick("Main Game View");
+                sceneTransition.GetComponent<SceneTransition>().LoadNewScene("Main");
             } else {
                 Debug.Log("Wrong.");
 

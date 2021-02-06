@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class SceneTransition : MonoBehaviour
 {
-    public int whatScene;
+    public string whatScene;
     public Animator animator;
 
     // Start is called before the first frame update
@@ -17,22 +17,15 @@ public class SceneTransition : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.T))
-        {
-            StartCoroutine(LoadNewScene());
-        }
-    }
 
-    public void SceneTransitionOnClick()
-    {
-        StartCoroutine(LoadNewScene());
     }
 
     //Loads the new scene and plays the transition for it
-    private IEnumerator LoadNewScene()
+    public IEnumerator LoadNewScene(string sceneName)
     {
+        string theSceneName = sceneName;
         animator.SetBool("SceneChange", true);
         yield return new WaitForSeconds(1.5f);
-        SceneManager.LoadScene(whatScene);
+        SceneManager.LoadScene(sceneName);
     }
 }
