@@ -6,6 +6,13 @@ using UnityEngine.UI;
 
 public class SceneTransition : MonoBehaviour
 {
+    // add to this array to add your minigame to the rotation
+    private static readonly string[] minigames =
+    {
+        "MemoryGame",
+        "Sliding Puzzle"
+    };
+
     public string whatScene;
     public Animator sceneTransition;
     public Slider progressBar;
@@ -13,7 +20,10 @@ public class SceneTransition : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        progressBar.onValueChanged.AddListener(delegate { progressBarValueChange(); });
+        if (progressBar)
+        {
+            progressBar.onValueChanged.AddListener(delegate { progressBarValueChange(); });
+        }
         sceneTransition.SetBool("SceneChange", false);
     }
 
@@ -27,7 +37,7 @@ public class SceneTransition : MonoBehaviour
     {
         if (progressBar.value == 1)
         {
-            StartCoroutine(LoadNewScene("MemoryGame"));
+            StartCoroutine(LoadNewScene(minigames[Random.Range(0, minigames.Length)]));
         }
     }
 
