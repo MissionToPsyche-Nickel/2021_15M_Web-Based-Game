@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class SliderPuzzleManager : MonoBehaviour
 {
+    private static string[] randomImages = null;
+
     public int boardSize = 4;
     public RectTransform prefabTile;
 
@@ -38,14 +40,26 @@ public class SliderPuzzleManager : MonoBehaviour
                 display.GetComponent<Button>().onClick.AddListener(() => TrySpinTile(x));
             }
         }
+        ShuffleBoard();
         RefreshPositions();
-        LoadTexture(AssetDatabase.LoadAssetAtPath<Texture2D>("Assets/MainGameAssets/SpaceFront.png"));
+        LoadRandomTexture();
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    void ShuffleBoard()
+    {
+        for (int j = 0; j < boardSize; j++)
+        {
+            for (int i = 0; i < boardSize; i++)
+            {
+                boardState[i][j] = Random.Range(0, 4);
+            }
+        }
     }
 
     void RefreshPositions()
@@ -86,6 +100,16 @@ public class SliderPuzzleManager : MonoBehaviour
         RefreshPositions();
     }
 
+    public void LoadRandomTexture()
+    {
+        PrepTextures();
+        LoadTexture(
+            AssetDatabase.LoadAssetAtPath<Texture2D>(
+                randomImages[Random.Range(0, randomImages.Length)]
+            )
+        );
+    }
+
     public void LoadTexture(Texture2D texture)
     {
         int width = texture.width / boardSize;
@@ -99,6 +123,19 @@ public class SliderPuzzleManager : MonoBehaviour
                 tex.SetPixels(texture.GetPixels(width * i, height * j, width, height));
                 tex.Apply();
                 boardDisplay[i][j].GetComponent<RawImage>().texture = tex;
+            }
+        }
+    }
+
+    private void PrepTextures()
+    {
+        if (randomImages == null)
+        {
+            string[] GUIDs = AssetDatabase.FindAssets("t:Texture2D", new[] { "Assets/Scenes/Sliding Puzzle/Possible Images" });
+            randomImages = new string[GUIDs.Length];
+            for (int i = 0; i < randomImages.Length; i++)
+            {
+                randomImages[i] = AssetDatabase.GUIDToAssetPath(GUIDs[i]);
             }
         }
     }
