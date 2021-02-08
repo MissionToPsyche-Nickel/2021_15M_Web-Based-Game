@@ -6,7 +6,7 @@ public class ResetButton : MonoBehaviour
 {
     [SerializeField] private GameObject targetObject;
     [SerializeField] private string targetMessage;
-    public Color highlightColor = Color.cyan;
+    public Color highlightColor = Color.blue;
 
     public void OnMouseOver()
     {
@@ -28,7 +28,7 @@ public class ResetButton : MonoBehaviour
 
     public void OnMouseDown()
     {
-        transform.localScale = new Vector3(1.2f, 1.2f, 1.0f);
+        transform.localScale = new Vector3(1.1f, 1.1f, 1.0f);
     }
 
     public void OnMouseUp()
