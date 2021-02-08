@@ -9,6 +9,7 @@ public class SceneController : MonoBehaviour
     public const int gridCols = 4;
     public const float offsetX = 3.5f;
     public const float offsetY = 2.5f;
+    public Animator sceneTransition;
 
     //private bool buttonLock = false;
 
@@ -94,6 +95,8 @@ public class SceneController : MonoBehaviour
             {
                 promptLabel.text = "You Won!";
                 yield return new WaitForSeconds(1.5f);
+                sceneTransition.SetBool("SceneChange", true);
+                yield return new WaitForSeconds(1.5f);
                 GameWon();
             }
         }
@@ -117,8 +120,10 @@ public class SceneController : MonoBehaviour
         SceneManager.LoadScene("Main");
     }
 
-    public void Restart()
+    public IEnumerator Restart()
     {
+        sceneTransition.SetBool("SceneChange", true);
+        yield return new WaitForSeconds(1.5f);
         SceneManager.LoadScene("MemoryGame");
     }
 }

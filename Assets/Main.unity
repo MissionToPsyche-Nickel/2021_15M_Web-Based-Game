@@ -532,7 +532,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   whatScene: 0
-  animator: {fileID: 1743725227}
+  sceneTransition: {fileID: 1743725227}
   progressBar: {fileID: 1333944612}
 --- !u!1 &415284722
 GameObject:
