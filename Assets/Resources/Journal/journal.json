@@ -1,0 +1,14 @@
+[
+    {
+        "page": 0,
+        "title": "none",
+        "image": "PageZeroImage",
+        "text": "As you discover objects with your telescope they will be displayed here for you to learn more about them."
+    },
+    {
+        "page": 1,
+        "title": "Discovery 1: Saturn",
+        "image": "PageOneImage",
+        "text": "Congratulations on your first discovery! The planet Saturn is very interesting. Although Saturn is huge, with a surface area 83 times larger than Earth, you could not stand on it because it is made of gas instead of solid earth. And those amazing rings, although they stretch more than 120,000 km from the planet they are so thin that when viewed on edge they seem to disappear."
+    }
+]
