@@ -10,6 +10,7 @@ public class SceneTransition : MonoBehaviour
     public Animator sceneTransition;
     public Slider progressBar;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -33,7 +34,7 @@ public class SceneTransition : MonoBehaviour
 
     public void SceneTransitionOnClick()
     {
-        StartCoroutine(LoadNewScene("Mini-game Test"));
+        StartCoroutine(LoadNewScene(whatScene));
     }
 
     //Loads the new scene and plays the transition for it
@@ -41,7 +42,7 @@ public class SceneTransition : MonoBehaviour
     {
         sceneTransition.SetBool("SceneChange", true);
         string theSceneName = sceneName;
+        animator.SetBool("SceneChange", true);
         yield return new WaitForSeconds(1.5f);
         SceneManager.LoadScene(theSceneName);
-    }
     }
