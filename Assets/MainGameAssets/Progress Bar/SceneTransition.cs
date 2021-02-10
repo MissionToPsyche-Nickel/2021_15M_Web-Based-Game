@@ -43,7 +43,7 @@ public class SceneTransition : MonoBehaviour
 
     public void SceneTransitionOnClick()
     {
-        StartCoroutine(LoadNewScene("Mini-game Test"));
+        StartCoroutine(LoadNewScene(whatScene));
     }
 
     //Loads the new scene and plays the transition for it

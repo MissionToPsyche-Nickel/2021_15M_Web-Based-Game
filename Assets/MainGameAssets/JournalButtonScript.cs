@@ -27,10 +27,10 @@ public class JournalButtonScript : MonoBehaviour
     }
     private IEnumerator LoadNewScene(int playerLevel)
     {
-        int whatScene = 0;
+        string whatScene = "Main";
         if(playerLevel == 0)
         {
-            whatScene = 7;
+            whatScene = "Main";
         }
         animator.SetBool("SceneChange", true);
         yield return new WaitForSeconds(1.5f);
