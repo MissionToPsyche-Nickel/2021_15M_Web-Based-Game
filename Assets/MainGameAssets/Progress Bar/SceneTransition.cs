@@ -12,8 +12,7 @@ public class SceneTransition : MonoBehaviour
         "MemoryGame",
         "Sliding Puzzle"
     };
-
-    public string whatScene;
+    
     public Animator sceneTransition;
     public Slider progressBar;
 
@@ -41,7 +40,7 @@ public class SceneTransition : MonoBehaviour
         }
     }
 
-    public void SceneTransitionOnClick()
+    public void SceneTransitionOnClick(string whatScene)
     {
         StartCoroutine(LoadNewScene(whatScene));
     }

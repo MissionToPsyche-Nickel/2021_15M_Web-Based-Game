@@ -2,19 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
 
 public class WordMatchControl : MonoBehaviour
 {
     // Simple lock to prevent multiple word presses. When a word is clicked this is set to true. On clicking a definition will check if this is true before painting line.
     private static bool wordWasClicked;
-    private Transform[] points;
 
     // The GameObject for Scene Transitions
     private GameObject sceneTransition;
 
-    //public GameObject word1;
-    //public GameObject definition1;
+    // replace this with something more elegant soon
+    public GameObject[] words;
+    public GameObject[] definitions;
+    public LineRenderer[] lines;
 
     // The word and definition objects
     private static int selection;
@@ -22,13 +22,9 @@ public class WordMatchControl : MonoBehaviour
     private int[] answerKey = new int[] {1,1,2,2,3,3};
     
     // To create a line from current word to definition
-    //private LineRenderer lineRenderer;
-    private Transform startPosition;
-    private Vector3 mousePosition;
-    private Transform endPosition;
 
     // For player message if choices are incorrect
-    private TextMeshProUGUI successMessageText;
+    private Text successMessageText;
     string successMessage;
 
     void Start() {
@@ -37,23 +33,32 @@ public class WordMatchControl : MonoBehaviour
         selection = 0;
         playerChoices = new int[6] {1,0,2,0,3,0};
         successMessage = ""; 
-        successMessageText = GameObject.Find("SuccessMessage").GetComponent<TextMeshProUGUI>();
+        successMessageText = GameObject.Find("SuccessMessage").GetComponentInChildren<Text>();
         successMessageText.text = successMessage;
+
+        // setup listeners
+        for (int i = 0; i < 3; i++)
+        {
+            int x = i + 1;
+            words[i].GetComponentInChildren<Canvas>().worldCamera = Camera.main;
+            words[i].GetComponentInChildren<Button>().onClick.AddListener(() => wordClicked(x));
+            definitions[i].GetComponentInChildren<Canvas>().worldCamera = Camera.main;
+            definitions[i].GetComponentInChildren<Button>().onClick.AddListener(() => definitionClicked(x));
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        // Track mouse position after player click
-        //mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);  
+
     }
 
-    public void word1Clicked() {
-        Debug.Log("Word 1 clicked.");
+    public void wordClicked(int wordNum) {
+        Debug.Log("Word " + wordNum + " clicked.");
         
         //this acts as a lock to prevent multiple definitions from being selected.
         wordWasClicked = true;
-        selection = 1;
+        selection = wordNum;
 
         /**
         startPosition = word1.transform;
@@ -71,44 +76,24 @@ public class WordMatchControl : MonoBehaviour
         */  
     }
 
-    public void word2Clicked() {
-        Debug.Log("Word 2 clicked.");
-        wordWasClicked = true;
-        selection = 2;
-    }
-
-    public void word3Clicked() {
-        Debug.Log("Word 3 clicked.");
-        wordWasClicked = true;
-        selection = 3;
-    }
-
     public void definitionClicked(int defNum) {
         if (wordWasClicked) {
             Debug.Log("Definition " + defNum + " clicked while word " + selection + " selected.");
 
-            switch (selection) {
-
-                case 1:
-                playerChoices[1] = defNum;
-                break;
-
-                case 2:
-                playerChoices[3] = defNum;
-                break;
-
-                case 3:
-                playerChoices[5] = defNum;
-                break;
-            }
+            // this is mathematically equivalent to the old switch statement, due to how the pairings work
+            playerChoices[selection * 2 - 1] = defNum;
         }
         else {
-            Debug.Log("Definition clicked when no word was selected.");
+            Debug.Log("Definition " + defNum + " clicked when no word was selected.");
         } 
 
         wordWasClicked = false;
+        updateLines();
+    }
 
-        //lineRenderer.enabled = false;
+    public void updateLines()
+    {
+
     }
 
     public void checkAnswers() {
@@ -125,7 +110,7 @@ public class WordMatchControl : MonoBehaviour
                 // Display success message to player then change scenes
                 successMessage = "Great Job!";
                 successMessageText.text = successMessage;
-                sceneTransition.GetComponent<SceneTransition>().SceneTransitionOnClick("Main Game View");
+                sceneTransition.GetComponent<SceneTransition>().SceneTransitionOnClick("Main");
             } else {
                 Debug.Log("Wrong.");
 
