@@ -45,6 +45,7 @@ public class WordMatchControl : MonoBehaviour
             definitions[i].GetComponentInChildren<Canvas>().worldCamera = Camera.main;
             definitions[i].GetComponentInChildren<Button>().onClick.AddListener(() => definitionClicked(x));
         }
+        updateLines();
     }
 
     // Update is called once per frame
@@ -59,21 +60,6 @@ public class WordMatchControl : MonoBehaviour
         //this acts as a lock to prevent multiple definitions from being selected.
         wordWasClicked = true;
         selection = wordNum;
-
-        /**
-        startPosition = word1.transform;
-        
-        if (lineRenderer == null) {
-            lineRenderer = gameObject.AddComponent<LineRenderer>();
-        }
-        lineRenderer.SetPosition(0, startPosition.position);
-        lineRenderer.SetPosition(1, mousePosition);  
-        lineRenderer.useWorldSpace = true; 
-
-        if (!lineRenderer.enabled) {
-            lineRenderer.enabled = true;
-        }
-        */  
     }
 
     public void definitionClicked(int defNum) {
@@ -93,7 +79,21 @@ public class WordMatchControl : MonoBehaviour
 
     public void updateLines()
     {
-
+        for (int i = 0; i < 3; i++)
+        {
+            LineRenderer line = lines[i];
+            int def = playerChoices[i * 2 + 1];
+            if (def == 0) // is there data here? no?
+            {
+                line.enabled = false;
+            }
+            else
+            {
+                line.SetPosition(0, words[i].transform.position);
+                line.SetPosition(1, definitions[def - 1].transform.position); // -1 since def is 1-based instead of 0-based
+                line.enabled = true;
+            }
+        }
     }
 
     public void checkAnswers() {
