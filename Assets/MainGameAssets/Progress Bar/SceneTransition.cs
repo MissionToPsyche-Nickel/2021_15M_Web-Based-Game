@@ -42,7 +42,11 @@ public class SceneTransition : MonoBehaviour
     {
         sceneTransition.SetBool("SceneChange", true);
         string theSceneName = sceneName;
-        animator.SetBool("SceneChange", true);
+
+        /** Found this and it was giving a compilation error that animator does not exist in the current context. Looks like it may have been changed to sceneTransition above. Commented out to fix error. --jbement */
+        //animator.SetBool("SceneChange", true);
+        
         yield return new WaitForSeconds(1.5f);
         SceneManager.LoadScene(theSceneName);
     }
+}

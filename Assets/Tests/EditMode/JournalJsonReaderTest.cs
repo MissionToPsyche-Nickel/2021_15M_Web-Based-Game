@@ -11,10 +11,10 @@ namespace Tests
         JournalJsonReader jsonReader;
         
         [SetUp]
-        void SetUp()
+        public void SetUp()
         {
             jsonReader = new GameObject().AddComponent<JournalJsonReader>();
-            jsonReader.jsonFile = Resources.Load("journal") as TextAsset;
+            jsonReader.jsonFile = Resources.Load("Journal/journal") as TextAsset;
         }
 
         [Test]

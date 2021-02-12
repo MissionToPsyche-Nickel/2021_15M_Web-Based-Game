@@ -3,6 +3,7 @@
     "references": [
         "UnityEngine.TestRunner",
         "UnityEditor.TestRunner",
+        "Memory",
         "Journal"
     ],
     "includePlatforms": [

@@ -39,7 +39,7 @@ public class JournalJsonReader : MonoBehaviour
 
     internal Pages pagelist;
 
-    internal Pages LoadPagesFromFile()
+    public Pages LoadPagesFromFile()
     {
         Assert.IsNotNull(jsonFile);
         
