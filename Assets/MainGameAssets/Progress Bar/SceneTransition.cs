@@ -42,7 +42,8 @@ public class SceneTransition : MonoBehaviour
     {
         sceneTransition.SetBool("SceneChange", true);
         string theSceneName = sceneName;
-        animator.SetBool("SceneChange", true);
+        sceneTransition.SetBool("SceneChange", true);
         yield return new WaitForSeconds(1.5f);
         SceneManager.LoadScene(theSceneName);
     }
+}
