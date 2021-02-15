@@ -8,10 +8,40 @@
             "text": "As you discover objects with your telescope they will be displayed here for you to learn more about them."
         },
         {
-            "page": 1,
-            "title": "Discovery 1: Saturn",
+            "page":1,
+            "title": "Discovery 1: Earth's Moon",
             "image": "PageOneImage",
-            "text": "Congratulations on your first discovery! The planet Saturn is very interesting. Although Saturn is huge, with a surface area 83 times larger than Earth, you could not stand on it because it is made of gas instead of solid earth. And those amazing rings, although they stretch more than 120,000 km from the planet they are so thin that when viewed on edge they seem to disappear."
+            "text": ""
+        },
+        {
+            "page": 2,
+            "title": "Discovery 2: Mars",
+            "image": "PageTwoImage",
+            "text": "As far back as the ancient Babylonians and Egyptians humans have observed Mars but it was not until "
+        },
+        {
+            "page": 3,
+            "title": "Discovery 3: Saturn",
+            "image": "PageThreeImage",
+            "text": ""
+        },
+        {
+            "page": 4,
+            "title": "Discovery 4: The Sombrero Galaxy",
+            "image": "PageFourImage",
+            "text": ""
+        },
+        {
+            "page": 5,
+            "title": "Discovery 5: The Crab Nebula",
+            "image": "The Crab Nebula was first observed by Chinese astronomers in 1054 CE who believed it to be a star. It is the remains of a supernova explosion",
+            "text": ""
+        },
+        {
+            "page": 6,
+            "title": "Discovery 6: The Asteroid Psyche",
+            "image": "",
+            "text": ""
         }
     ]
 }
