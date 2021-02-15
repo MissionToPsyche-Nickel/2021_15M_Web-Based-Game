@@ -100,6 +100,8 @@ public class SliderPuzzleManager : MonoBehaviour
         }
         // beyond this point is only executed if the image is completed
         completed = true;
+        Gamestate.instance.gameProgress++;
+        Debug.Log("Game progress: " + Gamestate.instance.gameProgress);
         StartCoroutine(Camera.main.GetComponent<SceneTransition>().LoadNewScene("Main"));
     }
 
