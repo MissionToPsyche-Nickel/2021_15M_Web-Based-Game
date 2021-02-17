@@ -9,7 +9,7 @@ using NUnit.Framework;
 using Is = NUnit.Framework.Is;
 
 namespace Tests
-{   
+{
     public class TestSuite
     {
         /*        [SetUp]
@@ -26,6 +26,13 @@ namespace Tests
             bool isActive = false;
 
             Assert.AreEqual(false, isActive);
+
+        }
+
+
+        [Test]
+        public void testLoadtexture()
+        {
 
         }
     }
