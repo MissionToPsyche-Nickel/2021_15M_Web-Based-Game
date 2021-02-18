@@ -10,7 +10,7 @@ public class JournalButtonScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        playerLevel = PlayerPrefs.GetInt("Level");
+
     }
 
     // Update is called once per frame
@@ -27,8 +27,9 @@ public class JournalButtonScript : MonoBehaviour
     }
     private IEnumerator LoadNewScene(int playerLevel)
     {
+        playerLevel = PlayerPrefs.GetInt("Level");
         string whatScene = "Title";
-        if(playerLevel == 1)
+        if (playerLevel == 1)
         {
             whatScene = "JournalLevel1Page1";
         }
