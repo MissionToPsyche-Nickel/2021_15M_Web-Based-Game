@@ -93,6 +93,8 @@ public class SceneController : MonoBehaviour
             //check if the game is won
             if (_numMatches == images.Length)
             {
+                Gamestate.instance.gameProgress++;
+                Debug.Log("Game progress: " + Gamestate.instance.gameProgress);
                 promptLabel.text = "You Won!";
                 yield return new WaitForSeconds(1.5f);
                 sceneTransition.SetBool("SceneChange", true);
