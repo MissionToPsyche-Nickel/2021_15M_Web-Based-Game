@@ -29,7 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Journal/BlankJournal.unity
     guid: f6da6e17c14e6a941ba46ad5dcb54b78
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Mini-Games/Memory Match Game.unity
     guid: ad5f725331410474d90f1fd41742fb9b
   - enabled: 1
