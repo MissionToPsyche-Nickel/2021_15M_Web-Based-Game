@@ -31,9 +31,14 @@ namespace Tests
 
 
         [Test]
-        public void testLoadtexture()
+        public void TestIfTileIsClicked()
         {
+            float delta = 128.0f / boardSize;
+            RectTransform test_display = Instantiate(prefabTile);
+            display.offsetMin = new Vector2(-delta, -delta);
+            display.offsetMax = new Vector2(delta, delta);
 
+            Assert.AreEqual(test_display, boardstate);
         }
     }
 }
