@@ -27,10 +27,19 @@ public class JournalButtonScript : MonoBehaviour
     }
     private IEnumerator LoadNewScene(int playerLevel)
     {
-        string whatScene = "Main";
-        if(playerLevel == 0)
+        playerLevel = PlayerPrefs.GetInt("Level");
+        string whatScene = "Title";
+        if (playerLevel == 1)
         {
-            whatScene = "Main";
+            whatScene = "JournalLevel1Page1";
+        }
+        else if (playerLevel == 2)
+        {
+            whatScene = "JournalLevel2Page1";
+        }
+        else if (playerLevel == 3)
+        {
+            whatScene = "JournalLevel3Page2";
         }
         animator.SetBool("SceneChange", true);
         yield return new WaitForSeconds(1.5f);
