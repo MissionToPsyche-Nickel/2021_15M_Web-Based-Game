@@ -5,8 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class JournalButtonScript : MonoBehaviour
 {
-    public int playerLevel;
     public Animator animator;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,7 +22,7 @@ public class JournalButtonScript : MonoBehaviour
     public void JournalButtonPressed()
     {
         //print("Journal Button Pressed");
-        StartCoroutine(LoadNewScene(playerLevel));
+        StartCoroutine(LoadNewScene(Gamestate.instance.gameProgress));
         // this'll be what gets hooked into making things appear and disappear to make the journal open up
     }
     private IEnumerator LoadNewScene(int playerLevel)
