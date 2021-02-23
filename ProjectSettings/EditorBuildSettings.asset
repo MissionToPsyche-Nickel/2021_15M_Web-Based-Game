@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Sliding Puzzle/Sliding Puzzle.unity
     guid: d0bb453657753364ea76e445915a88c0
+  - enabled: 1
+    path: Assets/Scenes/Word Match Game/WordMatch.unity
+    guid: 1ec0393aff9527548ac2a5d42e61593b
   m_configObjects: {}

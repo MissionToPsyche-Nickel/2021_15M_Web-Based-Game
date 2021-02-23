@@ -110,8 +110,7 @@ public class WordMatchControl : MonoBehaviour
                 // Display success message to player then change scenes
                 successMessage = "Great Job!";
                 successMessageText.text = successMessage;
-                Gamestate.instance.gameProgress++;
-                Debug.Log("Game progress: " + Gamestate.instance.gameProgress);
+                PlayerPrefs.SetInt("Level", PlayerPrefs.GetInt("Level") + 1);
                 sceneTransition.GetComponent<SceneTransition>().SceneTransitionOnClick("Main");
             } else {
                 Debug.Log("Wrong.");
