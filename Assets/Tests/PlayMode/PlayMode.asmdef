@@ -1,9 +1,9 @@
 {
-    "name": "Tests",
+    "name": "PlayMode",
     "references": [
         "UnityEngine.TestRunner",
         "UnityEditor.TestRunner",
-        "GameAssembly"
+        "SliderPuzzle"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

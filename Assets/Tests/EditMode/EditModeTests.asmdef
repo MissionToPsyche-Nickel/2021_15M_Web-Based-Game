@@ -1,9 +1,10 @@
 {
-    "name": "EditMode",
+    "name": "EditModeTests",
     "references": [
         "UnityEngine.TestRunner",
         "UnityEditor.TestRunner",
-        "Memory"
+        "Memory",
+        "Journal"
     ],
     "includePlatforms": [
         "Editor"
