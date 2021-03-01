@@ -39,8 +39,9 @@ public class ScalesManager : MonoBehaviour
         {
             selectedWeight.transform.SetParent(leftScale, false);
             selectedWeight = null;
-            RefreshPositions(field, -100);
+            RefreshPositions(field, 0);
             RefreshPositions(leftScale, 0);
+            RefreshPositions(rightScale, 0);
         }
     }
 
@@ -50,7 +51,20 @@ public class ScalesManager : MonoBehaviour
         {
             selectedWeight.transform.SetParent(rightScale, false);
             selectedWeight = null;
-            RefreshPositions(field, -100);
+            RefreshPositions(field, 0);
+            RefreshPositions(leftScale, 0);
+            RefreshPositions(rightScale, 0);
+        }
+    }
+
+    public void SelectField()
+    {
+        if (selectedWeight != null)
+        {
+            selectedWeight.transform.SetParent(field, false);
+            selectedWeight = null;
+            RefreshPositions(field, 0);
+            RefreshPositions(leftScale, 0);
             RefreshPositions(rightScale, 0);
         }
     }
@@ -83,7 +97,7 @@ public class ScalesManager : MonoBehaviour
             int weight = weights[i];
             var obj = Instantiate(templateWeight, field, true);
             obj.weight = weight;
-            obj.transform.localPosition = new Vector2(i * 50 + offset, -100);
+            obj.transform.localPosition = new Vector2(i * 50 + offset, 0);
             obj.GetComponent<Image>().sprite = weightSprites[weight-1];
             obj.GetComponent<Button>().onClick.AddListener(() => SelectWeight(obj));
         }
