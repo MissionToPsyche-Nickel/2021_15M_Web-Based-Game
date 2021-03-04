@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
@@ -13,6 +14,7 @@ public class ScalesManager : MonoBehaviour
 
     private Sprite[] weightSprites;
     private ScaleWeightScript selectedWeight = null;
+    private int imbalanceCap = 2;
 
     // Start is called before the first frame update
     void Start()
@@ -35,25 +37,31 @@ public class ScalesManager : MonoBehaviour
 
     public void SelectLeftScale()
     {
-        if (selectedWeight != null)
+        if (selectedWeight != null && selectedWeight.transform.parent == field)
         {
-            selectedWeight.transform.SetParent(leftScale, false);
-            selectedWeight = null;
-            RefreshPositions(field, 0);
-            RefreshPositions(leftScale, 0);
-            RefreshPositions(rightScale, 0);
+            if (Imbalance() - selectedWeight.weight >= -imbalanceCap)
+            {
+                   selectedWeight.transform.SetParent(leftScale, false);
+                selectedWeight = null;
+                RefreshPositions(field, 0);
+                RefreshPositions(leftScale, 0);
+                RefreshPositions(rightScale, 0);
+            }
         }
     }
 
     public void SelectRightScale()
     {
-        if (selectedWeight != null)
+        if (selectedWeight != null && selectedWeight.transform.parent == field)
         {
-            selectedWeight.transform.SetParent(rightScale, false);
-            selectedWeight = null;
-            RefreshPositions(field, 0);
-            RefreshPositions(leftScale, 0);
-            RefreshPositions(rightScale, 0);
+            if (Imbalance() + selectedWeight.weight <= imbalanceCap)
+            {
+                selectedWeight.transform.SetParent(rightScale, false);
+                selectedWeight = null;
+                RefreshPositions(field, 0);
+                RefreshPositions(leftScale, 0);
+                RefreshPositions(rightScale, 0);
+            }
         }
     }
 
@@ -61,11 +69,15 @@ public class ScalesManager : MonoBehaviour
     {
         if (selectedWeight != null)
         {
-            selectedWeight.transform.SetParent(field, false);
-            selectedWeight = null;
-            RefreshPositions(field, 0);
-            RefreshPositions(leftScale, 0);
-            RefreshPositions(rightScale, 0);
+            int delta = selectedWeight.weight * (selectedWeight.transform.parent == leftScale ? 1 : -1);
+            if (Mathf.Abs(Imbalance() + delta) <= imbalanceCap)
+            {
+                selectedWeight.transform.SetParent(field, false);
+                selectedWeight = null;
+                RefreshPositions(field, 0);
+                RefreshPositions(leftScale, 0);
+                RefreshPositions(rightScale, 0);
+            }
         }
     }
 
@@ -101,5 +113,21 @@ public class ScalesManager : MonoBehaviour
             obj.GetComponent<Image>().sprite = weightSprites[weight-1];
             obj.GetComponent<Button>().onClick.AddListener(() => SelectWeight(obj));
         }
+    }
+
+    // positive numbers indicate the right side is heavier
+    // negative numbers indicate the left side is heavier
+    // zero indicates the scale is balanced
+    public int Imbalance()
+    {
+        return WeighArea(rightScale) - WeighArea(leftScale);
+    }
+
+    public int WeighArea(Transform area)
+    {
+        return area.Cast<Transform>() // coersion magic
+            .Where(x => x.GetComponent<ScaleWeightScript>() != null) // remove non-weights from calculation
+            .Select(x => x.GetComponent<ScaleWeightScript>().weight) // transform weights into their actual weight
+            .Sum(); // tally it all up
     }
 }
