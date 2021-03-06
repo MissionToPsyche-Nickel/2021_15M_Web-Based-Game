@@ -43,9 +43,7 @@ public class ScalesManager : MonoBehaviour
             {
                    selectedWeight.transform.SetParent(leftScale, false);
                 selectedWeight = null;
-                RefreshPositions(field, 0);
-                RefreshPositions(leftScale, 0);
-                RefreshPositions(rightScale, 0);
+                Refresh();
             }
         }
     }
@@ -58,9 +56,7 @@ public class ScalesManager : MonoBehaviour
             {
                 selectedWeight.transform.SetParent(rightScale, false);
                 selectedWeight = null;
-                RefreshPositions(field, 0);
-                RefreshPositions(leftScale, 0);
-                RefreshPositions(rightScale, 0);
+                Refresh();
             }
         }
     }
@@ -74,10 +70,21 @@ public class ScalesManager : MonoBehaviour
             {
                 selectedWeight.transform.SetParent(field, false);
                 selectedWeight = null;
-                RefreshPositions(field, 0);
-                RefreshPositions(leftScale, 0);
-                RefreshPositions(rightScale, 0);
+                Refresh();
             }
+        }
+    }
+
+    private void Refresh()
+    {
+        RefreshPositions(field, 0);
+        RefreshPositions(leftScale, 0);
+        RefreshPositions(rightScale, 0);
+        if (Imbalance() == 0 && WeighArea(field) == 0) // balanced scale + no unused weights
+        {
+            imbalanceCap = -1; //this should prevent any moves from occuring
+            PlayerPrefs.SetInt("Level", PlayerPrefs.GetInt("Level") + 1);
+            StartCoroutine(Camera.main.GetComponent<SceneTransition>().LoadNewScene("Main"));
         }
     }
 
