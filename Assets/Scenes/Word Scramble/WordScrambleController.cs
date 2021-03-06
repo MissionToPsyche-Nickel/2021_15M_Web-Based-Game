@@ -12,6 +12,7 @@ public class WordScrambleController : MonoBehaviour
     public InputField InputField5;
     public Button checkAnswers;
     private Text successMessageText;
+    private GameObject sceneTransition;
     string successMessage;
 
     public void Start()
@@ -27,6 +28,8 @@ public class WordScrambleController : MonoBehaviour
         successMessage = "";
         successMessageText = GameObject.Find("SuccessMessage").GetComponentInChildren<Text>();
         successMessageText.text = successMessage;
+        //The scene transition animation.
+        sceneTransition = GameObject.Find("SceneTransitionHolder");
     }
     public void ValueChangeCheck()
     {
@@ -54,6 +57,7 @@ public class WordScrambleController : MonoBehaviour
             successMessage = "Great Job!";
             successMessageText.text = successMessage;
             PlayerPrefs.SetInt("Level", PlayerPrefs.GetInt("Level") + 1);
+            sceneTransition.GetComponent<SceneTransition>().SceneTransitionOnClick("Main");
         }
         //If the input is wrong, the player can try again.
         else

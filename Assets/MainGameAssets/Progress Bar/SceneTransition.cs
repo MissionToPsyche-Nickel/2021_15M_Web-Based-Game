@@ -10,7 +10,8 @@ public class SceneTransition : MonoBehaviour
     private static readonly string[] minigames =
     {
         "MemoryGame",
-        "Sliding Puzzle"
+        "Sliding Puzzle",
+        "WordScramble"
     };
     
     public Animator sceneTransition;
