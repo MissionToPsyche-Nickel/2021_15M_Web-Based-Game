@@ -8,7 +8,6 @@ public class DialogManagerScript : MonoBehaviour
     private Queue<DialogSnippet> dialogQueue = new Queue<DialogSnippet>();
     private DialogSnippet activeSnippet = null;
 
-    private Image portraitImage;
     private Text titleTextbox;
     private Text textTextbox;
 
@@ -18,7 +17,7 @@ public class DialogManagerScript : MonoBehaviour
     void Start()
     {
         /*Logical check to ensure the tutorial only displays the first time the user is on the main scene */
-        portraitImage = transform.Find("Portrait").GetComponent<Image>();
+        //portraitImage = transform.Find("Portrait").GetComponent<Image>();
         titleTextbox = transform.Find("DialogBackground/Title").GetComponent<Text>();
         textTextbox = transform.Find("DialogBackground/Text").GetComponent<Text>();
 
@@ -26,18 +25,18 @@ public class DialogManagerScript : MonoBehaviour
 
         if (!Gamestate.instance.tutorialCompleted)
         {
-            AddDialog(null, "Psyche", "Welcome to the game!\n My name is Psyche, and I'm a scientist with a particular interest in space. I will be guiding you through how to play. \nPress the arrow button to continue.");
-            AddDialog(null, "Psyche", "Your goal is to complete your journal of celestial objects by identifying them with your telescope. You can open your journal with the button at the bottom left.");
-            AddDialog(null, "Psyche", "The telescope is how you identify celestial objects.\nYou can control it using the up and down arrow keys, or W and S.");
-            AddDialog(null, "Psyche", "Be sure to stay focused on the object for a few seconds while the progress bar fills up, otherwise you won't get a good look at it.");
-            AddDialog(null, "Psyche", "After you scan the object, you will be sent to a minigame.\nGood luck, and happy astronomy!");
+            AddDialog( "Psyche", "Welcome to the game!\n My name is Psyche, and I'm a scientist with a particular interest in space. I will be guiding you through how to play. \nPress the arrow button to continue.");
+            AddDialog( "Psyche", "Your goal is to complete your journal of celestial objects by identifying them with your telescope. You can open your journal with the button at the bottom left.");
+            AddDialog( "Psyche", "The telescope is how you identify celestial objects.\nYou can control it using the up and down arrow keys, or W and S.");
+            AddDialog( "Psyche", "Be sure to stay focused on the object for a few seconds while the progress bar fills up, otherwise you won't get a good look at it.");
+            AddDialog( "Psyche", "After you scan the object, you will be sent to a minigame.\nGood luck, and happy astronomy!");
             Gamestate.instance.tutorialCompleted = true;
         }
         UpdateDialog();
 
         if (PlayerPrefs.GetInt("Level") == 2)
         {
-            AddDialog(null, "Psyche", "Now that you’ve learned how to use your telescope, the world, or… the universe is your oyster! " +
+            AddDialog("Psyche", "Now that you’ve learned how to use your telescope, the world, or… the universe is your oyster! " +
                 "See what else you can find. " +
                 "Remember, find and focus on the distant twinkle to fill the progress bar.");
         }
@@ -45,14 +44,14 @@ public class DialogManagerScript : MonoBehaviour
 
         if (PlayerPrefs.GetInt("Level") == 3)
         {
-            AddDialog(null, "Psyche", "What other planets can you find?");
+            AddDialog("Psyche", "What other planets can you find?");
         }
 
         UpdateDialog();
 
         if (PlayerPrefs.GetInt("Level") == 4)
         {
-            AddDialog(null, "Psyche", "Now that you’ve learned about a few planets in our solar system, let’s focus on finding some new galaxies. " +
+            AddDialog("Psyche", "Now that you’ve learned about a few planets in our solar system, let’s focus on finding some new galaxies. " +
                 "Galaxies are huge clusters of solar systems, stars, and gasses. " +
                 "The galaxy that we are in is called the Milky Way galaxy.");
         }
@@ -61,7 +60,7 @@ public class DialogManagerScript : MonoBehaviour
 
         if (PlayerPrefs.GetInt("Level") == 5)
         {
-            AddDialog(null, "Psyche", "There are many different things to view in space! Lets try to find a nebula. " +
+            AddDialog("Psyche", "There are many different things to view in space! Lets try to find a nebula. " +
                 "Nebulas are large interstellar clouds made of hydrogen, helium, and dust. They’re very colorful and mesmerizing. ");
         }
 
@@ -69,15 +68,15 @@ public class DialogManagerScript : MonoBehaviour
 
         if (PlayerPrefs.GetInt("Level") == 6)
         {
-            AddDialog(null, "Psyche", "The last thing I want to show you before you go is an asteroid named after the Greek goddess, Psyche." +
+            AddDialog("Psyche", "The last thing I want to show you before you go is an asteroid named after the Greek goddess, Psyche." +
                 "That name should sound familiar, since I was named after this asteroid!");
-            AddDialog(null, "Psyche", "Why is this asteroid important? Well, it’s one of a kind and we stand to learn a lot about it by studying it. " +
+            AddDialog("Psyche", "Why is this asteroid important? Well, it’s one of a kind and we stand to learn a lot about it by studying it. " +
                 "In fact, NASA has taken a special interest in Psyche and they are planning an expedition to study it in space! " +
                 "There’s a lot more about it, but you’ll have to complete the minigame to learn more.");
-            AddDialog(null, "Psyche", "By the way, because Psyche is so far away, you won’t be able to see it through that Hobby Telescope of yours. " +
+            AddDialog("Psyche", "By the way, because Psyche is so far away, you won’t be able to see it through that Hobby Telescope of yours. " +
                 "Instead, we’ll use the Very Large Telescope located in Chile. Give it a go!");
         }
-
+        
 
    
 }
@@ -102,7 +101,6 @@ public class DialogManagerScript : MonoBehaviour
         {
             activeSnippet = dialogQueue.Dequeue();
 
-            portraitImage.sprite = activeSnippet.portrait;
             titleTextbox.text = activeSnippet.title;
             textTextbox.text = activeSnippet.text;
 
@@ -120,17 +118,17 @@ public class DialogManagerScript : MonoBehaviour
         UpdateDialog();
     }
 
-    public void AddDialog(Sprite portrait, string title, string text)
+    public void AddDialog(string title, string text)
     {
-        dialogQueue.Enqueue(new DialogSnippet(portrait, title, text));
+        dialogQueue.Enqueue(new DialogSnippet(title, text));
         UpdateDialog();
     }
 
-    public void AddDialog(Sprite portrait, string title, IEnumerable<string> textList)
+    public void AddDialog(string title, IEnumerable<string> textList)
     {
         foreach (string text in textList)
         {
-            dialogQueue.Enqueue(new DialogSnippet(portrait, title, text));
+            dialogQueue.Enqueue(new DialogSnippet(title, text));
         }
         UpdateDialog();
     }
@@ -139,7 +137,7 @@ public class DialogManagerScript : MonoBehaviour
     private static int testNumber = 1;
     public void TestButtonPressed()
     {
-        AddDialog(null, "Null Man", "That's number " + testNumber);
+        AddDialog("Null Man", "That's number " + testNumber);
         testNumber++;
     }
 }
@@ -150,9 +148,8 @@ public class DialogSnippet
     public string title;
     public string text;
 
-    public DialogSnippet(Sprite portrait, string title, string text)
+    public DialogSnippet(string title, string text)
     {
-        this.portrait = portrait;
         this.title = title;
         this.text = text;
     }
