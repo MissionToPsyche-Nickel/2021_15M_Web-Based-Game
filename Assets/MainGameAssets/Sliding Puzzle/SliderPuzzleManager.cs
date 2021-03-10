@@ -13,7 +13,6 @@ public class SliderPuzzleManager : MonoBehaviour
 
     private int[][] boardState;
     private Transform[][] boardDisplay;
-    private bool completed = false;
 
     // Start is called before the first frame update
     void Start()
@@ -38,7 +37,6 @@ public class SliderPuzzleManager : MonoBehaviour
                 display.offsetMax = new Vector2(delta, delta);
                 boardDisplay[i][j] = display;
                 display.SetParent(transform);
-                display.SetSiblingIndex(i + 1);
                 display.GetComponent<Button>().onClick.AddListener(() => TrySpinTile(x));
             }
         }
@@ -85,31 +83,13 @@ public class SliderPuzzleManager : MonoBehaviour
         }
     }
 
-    void VerifyCompleted()
+    bool VerifyCompleted()
     {
-        // this loop will return if any square is non-zero (wrong direction)
-        for (int j = 0; j < boardSize; j++)
-        {
-            for (int i = 0; i < boardSize; i++)
-            {
-                if (boardState[i][j] != 0)
-                {
-                    return;
-                }
-            }
-        }
-        // beyond this point is only executed if the image is completed
-        completed = true;
-        PlayerPrefs.SetInt("Level", PlayerPrefs.GetInt("Level") + 1);
-        StartCoroutine(Camera.main.GetComponent<SceneTransition>().LoadNewScene("Main"));
+        return false;
     }
 
     void TrySpinTile(int id)
     {
-        if (completed)
-        {
-            return;
-        }
         int x = id % boardSize;
         int y = id / boardSize;
 
@@ -118,7 +98,6 @@ public class SliderPuzzleManager : MonoBehaviour
         boardState[x][y] %= 4;
 
         RefreshPositions();
-        VerifyCompleted();
     }
 
     public void LoadRandomTexture()
