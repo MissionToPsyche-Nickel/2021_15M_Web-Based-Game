@@ -10,17 +10,18 @@ namespace Tests
     {
         MainTile tile;
 
-        private Sprite image;
+        public Sprite image;
 
-        /**
+        
         [SetUp]
         public void SetupGameObject()
         {
             GameObject obj = new GameObject("MainTile");
             tile = obj.AddComponent<MainTile>();
-            GetComponent<SpriteRenderer>().sprite = image;
+            SpriteRenderer renderer = obj.AddComponent<SpriteRenderer>();
+            renderer.sprite = image;
         }
-        */
+        
 
         [Test]
         public void TestSetId()

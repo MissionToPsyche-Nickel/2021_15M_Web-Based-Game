@@ -9,6 +9,7 @@ public class SceneController : MonoBehaviour
     public const int gridCols = 4;
     public const float offsetX = 3.5f;
     public const float offsetY = 2.5f;
+    public int playerLevel;
     public Animator sceneTransition;
 
     //private bool buttonLock = false;
@@ -19,6 +20,8 @@ public class SceneController : MonoBehaviour
     /** This sets up the game board */
     private void Start()
     {
+        playerLevel = PlayerPrefs.GetInt("Level");
+        
         //This is a reference for the position of the first tile and builds other positions based off of it.
         Vector3 startPos = originalTile.transform.position;
 
@@ -116,6 +119,8 @@ public class SceneController : MonoBehaviour
     //This transitions to the main game scene after the player has won this game
     public void GameWon()
     {
+        //increment player level
+
         SceneManager.LoadScene("Main");
     }
 
