@@ -6,15 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Main Menu/Title.unity
-    guid: 0579fa1e8910bb34fae628f1d9b33236
-  - enabled: 1
-    path: Assets/Main.unity
-    guid: f4f91ca0aad0a1846b4a08f878ed1ae4
-  - enabled: 0
-    path: Assets/Transition Test Scene.unity
-    guid: fbe801991c57ddb4ebb38064b878cc41
-  - enabled: 1
     path: Assets/Scenes/Journal/JournalLevel1Page1.unity
     guid: 24f9016782a17764697f329691198c42
   - enabled: 1
@@ -24,15 +15,24 @@ EditorBuildSettings:
     path: Assets/Scenes/Journal/JournalLevel3Page2.unity
     guid: b3abbd94b94116a4c96237a3457653e8
   - enabled: 1
-    path: Assets/Scenes/Journal/JournalDefaultPage1.unity
-    guid: 6d6e0dd22cc28ab44b56ae382f4e678a
-  - enabled: 1
-    path: Assets/Scenes/Journal/BlankJournal.unity
-    guid: f6da6e17c14e6a941ba46ad5dcb54b78
-  - enabled: 0
-    path: Assets/Scenes/Mini-Games/Memory Match Game.unity
-    guid: ad5f725331410474d90f1fd41742fb9b
-  - enabled: 1
     path: Assets/Scenes/MemoryMatch/Scenes/MemoryGame.unity
     guid: bb10baddf04883c438753ef0ed82ffe5
+  - enabled: 1
+    path: Assets/Scenes/Main Menu/Title.unity
+    guid: 0579fa1e8910bb34fae628f1d9b33236
+  - enabled: 1
+    path: Assets/Scenes/Scales Game/Scales.unity
+    guid: 0ab43826015775b4889f09663ade7903
+  - enabled: 1
+    path: Assets/Scenes/Sliding Puzzle/Sliding Puzzle.unity
+    guid: d0bb453657753364ea76e445915a88c0
+  - enabled: 1
+    path: Assets/Scenes/Word Match Game/WordMatch.unity
+    guid: 1ec0393aff9527548ac2a5d42e61593b
+  - enabled: 1
+    path: Assets/Scenes/Word Scramble/WordScramble.unity
+    guid: 4b705b9ff46be6747832cd01de5fe786
+  - enabled: 1
+    path: Assets/Main.unity
+    guid: f4f91ca0aad0a1846b4a08f878ed1ae4
   m_configObjects: {}

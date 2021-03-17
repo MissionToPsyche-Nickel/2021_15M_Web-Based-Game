@@ -22,14 +22,13 @@ public class JournalButtonScript : MonoBehaviour
     public void JournalButtonPressed()
     {
         //print("Journal Button Pressed");
-        StartCoroutine(LoadNewScene(Gamestate.instance.gameProgress));
+        StartCoroutine(LoadNewScene(PlayerPrefs.GetInt("Level")));
         // this'll be what gets hooked into making things appear and disappear to make the journal open up
     }
     private IEnumerator LoadNewScene(int playerLevel)
     {
-        playerLevel = PlayerPrefs.GetInt("Level");
-        string whatScene = "Title";
-        if (playerLevel == 1)
+        string whatScene = "";
+        if(playerLevel == 1)
         {
             whatScene = "JournalLevel1Page1";
         }
@@ -40,6 +39,18 @@ public class JournalButtonScript : MonoBehaviour
         else if (playerLevel == 3)
         {
             whatScene = "JournalLevel3Page2";
+        }
+        else if (playerLevel == 4)
+        {
+            whatScene = "Main";
+        }
+        else if (playerLevel == 5 || playerLevel == 6)
+        {
+            whatScene = "Main";
+        }
+        else
+        {
+            whatScene = "Main";
         }
         animator.SetBool("SceneChange", true);
         yield return new WaitForSeconds(1.5f);
