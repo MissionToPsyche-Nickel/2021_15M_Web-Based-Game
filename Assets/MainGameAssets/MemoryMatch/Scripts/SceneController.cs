@@ -79,7 +79,7 @@ public class SceneController : MonoBehaviour
         {
             _firstRevealed = tile;
         }
-        else
+        else if (_secondRevealed == null)
         {
             _secondRevealed = tile;
             StartCoroutine(CheckMatch());
