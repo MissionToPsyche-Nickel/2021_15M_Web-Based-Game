@@ -42,15 +42,15 @@ public class JournalButtonScript : MonoBehaviour
         }
         else if (playerLevel == 4)
         {
-            whatScene = "Main";
+            whatScene = "JournalLevel3Page2";
         }
         else if (playerLevel == 5 || playerLevel == 6)
         {
-            whatScene = "Main";
+            whatScene = "JournalLevel3Page2";
         }
         else
         {
-            whatScene = "Main";
+            whatScene = "JournalLevel3Page2";
         }
         animator.SetBool("SceneChange", true);
         yield return new WaitForSeconds(1.5f);
