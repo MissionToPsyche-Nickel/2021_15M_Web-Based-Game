@@ -761,6 +761,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87d42f6553a71f74f82b17ceb801b8b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerLevel: 0
   sceneTransition: {fileID: 1579021404}
   originalTile: {fileID: 911149961}
   images:
@@ -973,11 +974,12 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1985709442}
-  m_Text: Match the Tiles
+  m_Text: "Match the tiles by selecting only two at a time. \nIf you get stuck, click
+    on the \"Reset Tiles\" button."
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1
-  m_Anchor: 0
+  m_Anchor: 4
   m_Alignment: 0
   m_TabSize: 4
   m_FontSize: 100
@@ -1036,7 +1038,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1985709442}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.06, y: -4.02, z: 0}
+  m_LocalPosition: {x: 0, y: -4.5, z: 0}
   m_LocalScale: {x: 0.06, y: 0.06, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
