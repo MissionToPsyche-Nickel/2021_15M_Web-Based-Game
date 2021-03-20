@@ -6,7 +6,10 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class GameOver : MonoBehaviour
-{    /*   public void setup(int state)
+{
+    bool gameIsOver = false;
+    
+    /*   public void setup(int state)
     {
 
     }*/
