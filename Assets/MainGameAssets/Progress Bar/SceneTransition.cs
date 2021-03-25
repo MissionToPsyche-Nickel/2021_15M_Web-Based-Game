@@ -12,7 +12,8 @@ public class SceneTransition : MonoBehaviour
         "MemoryGame",
         "Sliding Puzzle",
         "WordScramble",
-        "WordMatch"
+        "WordMatch",
+        "Scales"
     };
 
     public Animator sceneTransition;
