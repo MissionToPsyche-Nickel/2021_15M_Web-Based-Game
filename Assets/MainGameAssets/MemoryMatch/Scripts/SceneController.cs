@@ -121,7 +121,7 @@ public class SceneController : MonoBehaviour
     {
         //increment player level
 
-        SceneManager.LoadScene("Main");
+        SceneManager.LoadScene("Journal");
     }
 
     public IEnumerator Restart()

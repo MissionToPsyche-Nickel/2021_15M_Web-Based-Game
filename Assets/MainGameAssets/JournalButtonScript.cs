@@ -7,51 +7,16 @@ public class JournalButtonScript : MonoBehaviour
 {
     public Animator animator;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void JournalButtonPressed()
     {
-        //print("Journal Button Pressed");
-        StartCoroutine(LoadNewScene(PlayerPrefs.GetInt("Level")));
+        Debug.Log("Journal Button Pressed");
+        StartCoroutine(LoadJournal());
         // this'll be what gets hooked into making things appear and disappear to make the journal open up
     }
-    private IEnumerator LoadNewScene(int playerLevel)
+    private IEnumerator LoadJournal()
     {
-        string whatScene = "";
-        if(playerLevel == 1)
-        {
-            whatScene = "JournalLevel1Page1";
-        }
-        else if (playerLevel == 2)
-        {
-            whatScene = "JournalLevel2Page1";
-        }
-        else if (playerLevel == 3)
-        {
-            whatScene = "JournalLevel3Page2";
-        }
-        else if (playerLevel == 4)
-        {
-            whatScene = "JournalLevel3Page2";
-        }
-        else if (playerLevel == 5 || playerLevel == 6)
-        {
-            whatScene = "JournalLevel3Page2";
-        }
-        else
-        {
-            whatScene = "JournalLevel3Page2";
-        }
+        string whatScene = "Journal";
+        
         animator.SetBool("SceneChange", true);
         yield return new WaitForSeconds(1.5f);
         SceneManager.LoadScene(whatScene);
