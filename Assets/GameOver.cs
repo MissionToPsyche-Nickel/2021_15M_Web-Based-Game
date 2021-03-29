@@ -11,17 +11,18 @@ public class GameOver : MonoBehaviour
 
     }*/
     // Start is called before the first frame update
-  /*  void Start()
-    {
-        
-    }
+    /*  void Start()
+      {
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }*/
+      }
 
+      // Update is called once per frame
+      void Update()
+      {
+
+      }*/
+    PlayerPrefs.SetInt("Level", PlayerPrefs.GetInt("Level") + 1);
+     sceneTransition.GetComponent<SceneTransition>().SceneTransitionOnClick("Main");
     public void RestartClick()
     {
         SceneManager.LoadScene("Main");
