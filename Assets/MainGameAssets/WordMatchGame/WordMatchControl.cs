@@ -45,7 +45,15 @@ public class WordMatchControl : MonoBehaviour
         successMessageText.text = successMessage;
 
         // choose pairs to use
-        int[] pairings = new int[3] { 1, 2, 3 };
+        int[] options = new int[wordPairs.Length];
+        for (int i = 0; i < options.Length; i++) {
+            options[i] = i + 1;
+        }
+        Shuffle(options);
+        int[] pairings = new int[3] { options[0], options[1], options[2] };
+        int[] endings = new int[3] { 1, 2, 3 };
+        Shuffle(endings);
+        answerKey = new int[6] { 1, endings[0], 2, endings[1], 3, endings[2] };
 
         // setup listeners
         for (int i = 0; i < 3; i++)
@@ -136,6 +144,15 @@ public class WordMatchControl : MonoBehaviour
         else {
             Debug.Log("Tried to check answers when word was selected.");
             //Give reminder to player to make a selection
+        }
+    }
+
+    private void Shuffle(int[] arr) {
+        for (int i = arr.Length - 1; i > 1; i--) {
+            int j = Random.Range(0, i);
+            int t = arr[j];
+            arr[j] = arr[i];
+            arr[i] = t;
         }
     }
 }
