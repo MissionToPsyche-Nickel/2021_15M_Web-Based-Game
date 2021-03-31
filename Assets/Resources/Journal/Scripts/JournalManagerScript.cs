@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
 public class JournalManagerScript : MonoBehaviour
 {
@@ -14,7 +15,9 @@ public class JournalManagerScript : MonoBehaviour
     private const int totalPages = 3;
     private int currentPage;
     private Pages pageList;
-    public int playerLevel; //set public to test
+    private int playerLevel;
+    private GameObject sceneTransition; 
+ 
 
     // Start is called before the first frame update
     void Start()
@@ -23,7 +26,8 @@ public class JournalManagerScript : MonoBehaviour
         LoadPages();
         //get player current level -- starts at 1
         playerLevel = PlayerPrefs.GetInt("Level");
-        //playerLevel = 0;
+        
+        sceneTransition = GameObject.Find("SceneTransitionHolder");
         //find journal objects
         pageOneTitle = transform.Find("PageOneTitle").GetComponent<Text>();
         pageOneImage = transform.Find("ImagePageOne").GetComponent<Image>();
@@ -33,15 +37,6 @@ public class JournalManagerScript : MonoBehaviour
         pageTwoText = transform.Find("TextPageTwo").GetComponent<Text>();
 
         setCurrentContent();
-
-        /* For testing
-        pageOneTitle.text = pageList.pages[0].title;
-        pageOneImage.sprite = Resources.Load<Sprite>(pageList.pages[0].image);
-        pageOneText.text = pageList.pages[0].text;
-        pageTwoTitle.text = "";
-        pageTwoImage.sprite = null;
-        pageTwoText.text = "";
-        */
     }
 
 /* The journal should open to the newest page. */
@@ -217,6 +212,16 @@ public class JournalManagerScript : MonoBehaviour
 
             default:    //do nothing
                 break;
+        }
+    }
+
+    public void closeButtonPressed()
+    {
+        if (playerLevel > 5) {
+            //sceneTransition.GetComponent<SceneTransition>().SceneTransitionOnClick("Main");
+        }
+        else {
+            //sceneTransition.GetComponent<SceneTransition>().SceneTransitionOnClick("Main");
         }
     }
 
