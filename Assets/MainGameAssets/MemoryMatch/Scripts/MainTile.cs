@@ -9,7 +9,7 @@ public class MainTile : MonoBehaviour
 
    public void OnMouseDown() 
    {
-       if (Tile_Back.activeSelf) 
+       if (Tile_Back.activeSelf && controller.canReveal) 
        {
            Tile_Back.SetActive(false);
            controller.TileRevealed(this);
