@@ -26,7 +26,9 @@ public class WordMatchControl : MonoBehaviour
     {
         new string[] {"Milky Way", "The galaxy we live in"},
         new string[] {"The Earth", "The planet we live on"},
-        new string[] {"The Sun", "The star of the Milky Way"}
+        new string[] {"The Sun", "The star of the Milky Way"},
+        new string[] {"Psyche", "An asteroid with a metal core"},
+        new string[] {"Really Big Telescope", "The telescope used to find Psyche"}
     };
     
     // To create a line from current word to definition
