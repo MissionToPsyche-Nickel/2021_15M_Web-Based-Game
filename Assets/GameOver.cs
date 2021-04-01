@@ -21,8 +21,8 @@ public class GameOver : MonoBehaviour
       {
 
       }*/
-    PlayerPrefs.SetInt("Level", PlayerPrefs.GetInt("Level") + 1);
-     sceneTransition.GetComponent<SceneTransition>().SceneTransitionOnClick("Main");
+   /* PlayerPrefs.SetInt("Level", PlayerPrefs.GetInt("Level") + 1);
+     sceneTransition.GetComponent<SceneTransition>().SceneTransitionOnClick("Main");*/
     public void RestartClick()
     {
         SceneManager.LoadScene("Main");
