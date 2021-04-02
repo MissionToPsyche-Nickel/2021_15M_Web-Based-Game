@@ -96,15 +96,6 @@ public class DialogManagerScript : MonoBehaviour
         AddDialog(null, "Null Man", "That's number " + testNumber);
         testNumber++;
     }
-
-    //Not sure if these will work, for now need to clear playerPrefs manually
-    // public void OnApplicationQuit() {
-    //     PlayerPrefs.DeleteAll();
-    // }
-
-    // public void OnApplicationStart() {
-    //     PlayerPrefs.DeleteAll();
-    // }
 }
 
 public class DialogSnippet
