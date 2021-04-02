@@ -101,7 +101,7 @@ public class SliderPuzzleManager : MonoBehaviour
         // beyond this point is only executed if the image is completed
         completed = true;
         PlayerPrefs.SetInt("Level", PlayerPrefs.GetInt("Level") + 1);
-        StartCoroutine(Camera.main.GetComponent<SceneTransition>().LoadNewScene("Scenes/Journal/JournalLevel1Page1"));
+        StartCoroutine(Camera.main.GetComponent<SceneTransition>().LoadNewScene("Journal"));
     }
 
     void TrySpinTile(int id)

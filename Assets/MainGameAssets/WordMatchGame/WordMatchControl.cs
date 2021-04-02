@@ -111,7 +111,7 @@ public class WordMatchControl : MonoBehaviour
                 successMessage = "Great Job!";
                 successMessageText.text = successMessage;
                 PlayerPrefs.SetInt("Level", PlayerPrefs.GetInt("Level") + 1);
-                sceneTransition.GetComponent<SceneTransition>().SceneTransitionOnClick("Main");
+                sceneTransition.GetComponent<SceneTransition>().SceneTransitionOnClick("Journal");
             } else {
                 Debug.Log("Wrong.");
 

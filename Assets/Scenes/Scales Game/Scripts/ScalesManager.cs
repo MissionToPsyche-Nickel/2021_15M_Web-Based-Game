@@ -84,7 +84,7 @@ public class ScalesManager : MonoBehaviour
         {
             imbalanceCap = -1; //this should prevent any moves from occuring
             PlayerPrefs.SetInt("Level", PlayerPrefs.GetInt("Level") + 1);
-            StartCoroutine(Camera.main.GetComponent<SceneTransition>().LoadNewScene("Main"));
+            StartCoroutine(Camera.main.GetComponent<SceneTransition>().LoadNewScene("Journal"));
         }
     }
 
