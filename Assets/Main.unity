@@ -848,15 +848,15 @@ GameObject:
   m_Component:
   - component: {fileID: 271389529}
   - component: {fileID: 271389531}
-  - component: {fileID: 271389530}
   - component: {fileID: 271389532}
+  - component: {fileID: 271389530}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &271389529
 RectTransform:
   m_ObjectHideFlags: 0
@@ -926,7 +926,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 271389528}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad666f816e530c543b7cd53e16493bf2, type: 3}
+  m_Script: {fileID: 11500000, guid: ff7c00cc17ad6424c8b510c4f5bf91fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &289843220
@@ -1059,10 +1059,10 @@ RectTransform:
   m_Father: {fileID: 271389529}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 18, y: 109}
-  m_SizeDelta: {x: 574.61847, y: 152.25}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 10, y: 92}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &407373973
 MonoBehaviour:
@@ -1242,10 +1242,10 @@ RectTransform:
   m_Father: {fileID: 271389529}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 14}
-  m_SizeDelta: {x: 371.30914, y: 85.62474}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 5.9236145, y: 8}
+  m_SizeDelta: {x: -360.53827, y: -187.18764}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &496703538
 MonoBehaviour:
@@ -1290,7 +1290,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 271389532}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: GameOver, Assembly-CSharp
         m_MethodName: ExitClick
         m_Mode: 1
@@ -2591,10 +2591,10 @@ RectTransform:
   m_Father: {fileID: 271389529}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 7, y: -96}
-  m_SizeDelta: {x: 371.30914, y: 85.62474}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 8, y: -78}
+  m_SizeDelta: {x: -356.90308, y: -188.11841}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1357805703
 MonoBehaviour:
@@ -2639,7 +2639,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 271389532}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: GameOver, Assembly-CSharp
         m_MethodName: RestartClick
         m_Mode: 1
@@ -3960,9 +3960,10 @@ GameObject:
   - component: {fileID: 1877414282}
   - component: {fileID: 1877414281}
   - component: {fileID: 1877414280}
+  - component: {fileID: 1877414284}
   m_Layer: 5
   m_Name: GameOver
-  m_TagString: Untagged
+  m_TagString: GameOver
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4047,6 +4048,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1877414284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1877414279}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff7c00cc17ad6424c8b510c4f5bf91fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1906267374
 GameObject:
   m_ObjectHideFlags: 0
@@ -4225,7 +4238,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -3, y: 1}
+  m_AnchoredPosition: {x: -2.9999847, y: 1}
   m_SizeDelta: {x: 228.19443, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1916023724
