@@ -4,7 +4,6 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-
   m_Scenes:
   - enabled: 1
     path: Assets/Scenes/Main Menu/Title.unity
@@ -19,9 +18,6 @@ EditorBuildSettings:
     path: Assets/Scenes/MemoryMatch/Scenes/MemoryGame.unity
     guid: bb10baddf04883c438753ef0ed82ffe5
   - enabled: 1
-    path: Assets/Scenes/Scales Game/Scales.unity
-    guid: 0ab43826015775b4889f09663ade7903
-  - enabled: 1
     path: Assets/Scenes/Sliding Puzzle/Sliding Puzzle.unity
     guid: d0bb453657753364ea76e445915a88c0
   - enabled: 1
@@ -30,13 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Word Scramble/WordScramble.unity
     guid: 4b705b9ff46be6747832cd01de5fe786
-  - enabled: 0
-    path: Assets/Scenes/Journal/JournalLevel1Page1.unity
-    guid: 24f9016782a17764697f329691198c42
-  - enabled: 0
-    path: Assets/Scenes/Journal/JournalLevel2Page1.unity
-    guid: 941c4578df32a8d4da2c59d8d7988545
-  - enabled: 0
-    path: Assets/Scenes/Journal/JournalLevel3Page2.unity
-    guid: b3abbd94b94116a4c96237a3457653e8
+  - enabled: 1
+    path: Assets/Scenes/Scales Game/Scales.unity
+    guid: 0ab43826015775b4889f09663ade7903
   m_configObjects: {}
