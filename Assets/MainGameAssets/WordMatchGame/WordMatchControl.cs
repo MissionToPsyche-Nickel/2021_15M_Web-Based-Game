@@ -20,16 +20,6 @@ public class WordMatchControl : MonoBehaviour
     private static int selection;
     private static int[] playerChoices;
     private int[] answerKey = new int[] {1,1,2,2,3,3};
-
-    // The word set that can be chosen from
-    private static string[][] wordPairs =
-    {
-        new string[] {"Milky Way", "The galaxy we live in"},
-        new string[] {"The Earth", "The planet we live on"},
-        new string[] {"The Sun", "The star of the Milky Way"},
-        new string[] {"Psyche", "An asteroid with a metal core"},
-        new string[] {"Really Big Telescope", "The telescope used to find Psyche"}
-    };
     
     // To create a line from current word to definition
 
@@ -46,27 +36,14 @@ public class WordMatchControl : MonoBehaviour
         successMessageText = GameObject.Find("SuccessMessage").GetComponentInChildren<Text>();
         successMessageText.text = successMessage;
 
-        // choose pairs to use
-        int[] options = new int[wordPairs.Length];
-        for (int i = 0; i < options.Length; i++) {
-            options[i] = i + 1;
-        }
-        Shuffle(options);
-        int[] pairings = new int[3] { options[0], options[1], options[2] };
-        int[] endings = new int[3] { 1, 2, 3 };
-        Shuffle(endings);
-        answerKey = new int[6] { 1, endings[0], 2, endings[1], 3, endings[2] };
-
         // setup listeners
         for (int i = 0; i < 3; i++)
         {
             int x = i + 1;
             words[i].GetComponentInChildren<Canvas>().worldCamera = Camera.main;
             words[i].GetComponentInChildren<Button>().onClick.AddListener(() => wordClicked(x));
-            words[i].GetComponentInChildren<Text>().text = wordPairs[pairings[i] - 1][0]; // first element of the Nth selected pair
             definitions[i].GetComponentInChildren<Canvas>().worldCamera = Camera.main;
             definitions[i].GetComponentInChildren<Button>().onClick.AddListener(() => definitionClicked(x));
-            definitions[i].GetComponentInChildren<Text>().text = wordPairs[pairings[answerKey[2 * i + 1] - 1] - 1][1]; // second element of the complement of the Nth selected pair, and yes I know the code is a mess.
         }
         updateLines();
     }
@@ -146,15 +123,6 @@ public class WordMatchControl : MonoBehaviour
         else {
             Debug.Log("Tried to check answers when word was selected.");
             //Give reminder to player to make a selection
-        }
-    }
-
-    private void Shuffle(int[] arr) {
-        for (int i = arr.Length - 1; i > 1; i--) {
-            int j = Random.Range(0, i);
-            int t = arr[j];
-            arr[j] = arr[i];
-            arr[i] = t;
         }
     }
 }
