@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
-using UnityEngine.SceneManagement;
-
 
 public class JournalManagerScript : MonoBehaviour
 {
@@ -18,8 +16,8 @@ public class JournalManagerScript : MonoBehaviour
     private int currentPage;
     private Pages pageList;
     private int playerLevel;
-    private GameObject sceneTransition;
-    public GameObject journal;
+    private GameObject sceneTransition; 
+ 
 
     // Start is called before the first frame update
     void Start()
@@ -221,12 +219,9 @@ public class JournalManagerScript : MonoBehaviour
     {
         if (playerLevel > 5) {
             //sceneTransition.GetComponent<SceneTransition>().SceneTransitionOnClick("Main");
-            journal.SetActive(false);
         }
         else {
-            /* sceneTransition.GetComponent<SceneTransition>().SceneTransitionOnClick("Main");*/
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1); // return to previous scene
-
+            //sceneTransition.GetComponent<SceneTransition>().SceneTransitionOnClick("Main");
         }
     }
 
