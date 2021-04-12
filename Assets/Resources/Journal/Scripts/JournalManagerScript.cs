@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.Events;
+
+using UnityEngine.SceneManagement;
 
 public class JournalManagerScript : MonoBehaviour
 {
@@ -16,7 +17,10 @@ public class JournalManagerScript : MonoBehaviour
     private int currentPage;
     private Pages pageList;
     private int playerLevel;
-    private GameObject sceneTransition; 
+    private GameObject sceneTransition;
+
+    public Canvas mainCanvas;
+    public Canvas victoryCanvas;
  
 
     // Start is called before the first frame update
@@ -218,10 +222,11 @@ public class JournalManagerScript : MonoBehaviour
     public void closeButtonPressed()
     {
         if (playerLevel > 5) {
-            //sceneTransition.GetComponent<SceneTransition>().SceneTransitionOnClick("Main");
+            victoryCanvas.gameObject.SetActive(true);
+            mainCanvas.gameObject.SetActive(false);
         }
         else {
-            //sceneTransition.GetComponent<SceneTransition>().SceneTransitionOnClick("Main");
+            SceneManager.LoadScene("Main");
         }
     }
 
