@@ -9,10 +9,10 @@ public class SceneTransition : MonoBehaviour
     // add to this array to add your minigame to the rotation
     private static readonly string[] minigames =
     {
-        "Sliding Puzzle",
-        "WordMatch",
         "MemoryGame",
+        "Sliding Puzzle",
         "WordScramble",
+        "WordMatch",
         "Scales"
     };
 
@@ -39,15 +39,7 @@ public class SceneTransition : MonoBehaviour
     {
         if (progressBar.value == 1)
         {
-            int playerLevel = PlayerPrefs.GetInt("Level");
-            if (playerLevel < 6) {
-                StartCoroutine(LoadNewScene(minigames[playerLevel - 1]));
-            }
-            //added for testing so the game doesn't break if player prefs are not reset
-            else {
-                StartCoroutine(LoadNewScene(minigames[Random.Range(0, minigames.Length)]));
-            }
-            
+            StartCoroutine(LoadNewScene(minigames[Random.Range(0, minigames.Length)]));
         }
     }
 
