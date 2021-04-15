@@ -474,6 +474,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boardSize: 4
   prefabTile: {fileID: 3954864964836700707, guid: 36cb6f10835aa484fa0bd7b89335aba6, type: 3}
+  image: {fileID: 2800000, guid: 2540f3e85fc06f145b6c88a2f2773e5f, type: 3}
 --- !u!1 &1663181974
 GameObject:
   m_ObjectHideFlags: 0

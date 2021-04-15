@@ -245,6 +245,12 @@ MonoBehaviour:
   leftScale: {fileID: 1171385277}
   rightScale: {fileID: 260167419}
   templateWeight: {fileID: 6093741601635887338, guid: 3bc54206f0951634bb64c5680f2adcb2, type: 3}
+  weightSprites:
+  - {fileID: 21300000, guid: 1232b4ef7731fe94e80db3da53f36e2a, type: 3}
+  - {fileID: 21300000, guid: c4a10f97ffc114e48818aed8a09c3d64, type: 3}
+  - {fileID: 21300000, guid: 882a04eaacd7ab44f8f172ab67ec8e7b, type: 3}
+  - {fileID: 21300000, guid: cea084db4f2200043bb6c7226e3970ff, type: 3}
+  - {fileID: 21300000, guid: 02a1cee450276bd42bc3e6513aeeee1a, type: 3}
 --- !u!1 &260167418
 GameObject:
   m_ObjectHideFlags: 0
