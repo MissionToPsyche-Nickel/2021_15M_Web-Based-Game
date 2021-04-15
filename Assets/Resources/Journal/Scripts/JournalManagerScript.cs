@@ -21,11 +21,14 @@ public class JournalManagerScript : MonoBehaviour
 
     public Canvas mainCanvas;
     public Canvas victoryCanvas;
- 
+    public AudioSource themeSong;
+
 
     // Start is called before the first frame update
     void Start()
     {
+        //Set Game Over jingle volume
+        themeSong.volume = PlayerPrefs.GetFloat("Volume");
         //load the JSON file
         LoadPages();
         //get player current level -- starts at 1
@@ -224,6 +227,7 @@ public class JournalManagerScript : MonoBehaviour
         if (playerLevel > 5) {
             victoryCanvas.gameObject.SetActive(true);
             mainCanvas.gameObject.SetActive(false);
+            themeSong.Play();
         }
         else {
             SceneManager.LoadScene("Main");
