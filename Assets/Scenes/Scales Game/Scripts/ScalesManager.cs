@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,21 +10,14 @@ public class ScalesManager : MonoBehaviour
     public RectTransform leftScale;
     public RectTransform rightScale;
     public ScaleWeightScript templateWeight;
+    public Sprite[] weightSprites;
 
-    private Sprite[] weightSprites;
     private ScaleWeightScript selectedWeight = null;
     private int imbalanceCap = 2;
 
     // Start is called before the first frame update
     void Start()
     {
-        weightSprites = new Sprite[5];
-        for (int i = 0; i < 5; i++)
-        {
-            var texture = AssetDatabase.LoadAssetAtPath<Texture2D>("Assets/Scenes/Scales Game/Art/" + (i + 1) + "kg.png");
-            weightSprites[i] = Sprite.Create(texture, new Rect(0f, 0f, texture.width, texture.height), new Vector2(0.5f, 0.5f));
-        }
-
         GenerateWeights(new int[] {2, 2, 4});
     }
 
