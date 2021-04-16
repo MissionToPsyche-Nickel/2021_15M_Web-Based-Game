@@ -21,7 +21,7 @@ public class MainMenu : MonoBehaviour
         volumeSlider.onValueChanged.AddListener(delegate { setVolumeSlider(); });
     }
     public void PlayGame()
-    {
+    {   PlayerPrefs.DeleteAll();
         SceneManager.LoadScene("Main");
     }
 
