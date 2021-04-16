@@ -10,6 +10,7 @@ public class SliderPuzzleManager : MonoBehaviour
 
     public int boardSize = 4;
     public RectTransform prefabTile;
+    public Texture2D image;
 
     private int[][] boardState;
     private Transform[][] boardDisplay;
@@ -123,12 +124,7 @@ public class SliderPuzzleManager : MonoBehaviour
 
     public void LoadRandomTexture()
     {
-        PrepTextures();
-        LoadTexture(
-            AssetDatabase.LoadAssetAtPath<Texture2D>(
-                randomImages[Random.Range(0, randomImages.Length)]
-            )
-        );
+        LoadTexture(image);
     }
 
     public void LoadTexture(Texture2D texture)
@@ -144,19 +140,6 @@ public class SliderPuzzleManager : MonoBehaviour
                 tex.SetPixels(texture.GetPixels(width * i, height * j, width, height));
                 tex.Apply();
                 boardDisplay[i][j].GetComponent<RawImage>().texture = tex;
-            }
-        }
-    }
-
-    private void PrepTextures()
-    {
-        if (randomImages == null)
-        {
-            string[] GUIDs = AssetDatabase.FindAssets("t:Texture2D", new[] { "Assets/Scenes/Sliding Puzzle/Possible Images" });
-            randomImages = new string[GUIDs.Length];
-            for (int i = 0; i < randomImages.Length; i++)
-            {
-                randomImages[i] = AssetDatabase.GUIDToAssetPath(GUIDs[i]);
             }
         }
     }
