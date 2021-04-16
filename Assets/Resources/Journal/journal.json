@@ -33,15 +33,15 @@
         },
         {
             "page": 5,
-            "title": "Discovery 5: The Crab Nebula",
-            "image": "Journal/Images/PageFiveImage",
-            "text": "The Crab Nebula was first observed by Chinese astronomers in 1054 CE who believed it to be a new star in the sky as it had appeared suddenly and shined so bright it could be seen during the daytime. It is now known that what they witnessed was as supernova, the explosion of a massive star at the end of its life."
+            "title": "Discovery 5: The Asteroid Psyche",
+            "image": "Journal/Images/PageSixImage",
+            "text": "Psyche was discovered in 1852 by the Italian astronomer Annibale de Gasparis and named after the Greek goddess of the soul. Unlike most asteroids which are made of rock, Psyche is made mostly of metal. Scientists believe it may even be the remains of the core of an early planet."
         },
         {
             "page": 6,
-            "title": "Discovery 6: The Asteroid Psyche",
-            "image": "Journal/Images/PageSixImage",
-            "text": "Psyche was discovered in 1852 by the Italian astronomer Annibale de Gasparis and named after the Greek goddess of the soul. Unlike most asteroids which are made of rock, Psyche is made mostly of metal. Scientists believe it may even be the remains of the core of an early planet."
+            "title": "Discovery 6: The Crab Nebula",
+            "image": "Journal/Images/PageFiveImage",
+            "text": "The Crab Nebula was first observed by Chinese astronomers in 1054 CE who believed it to be a new star in the sky as it had appeared suddenly and shined so bright it could be seen during the daytime. It is now known that what they witnessed was as supernova, the explosion of a massive star at the end of its life."
         }
     ]
 }
