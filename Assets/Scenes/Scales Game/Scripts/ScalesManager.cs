@@ -69,9 +69,9 @@ public class ScalesManager : MonoBehaviour
 
     private void Refresh()
     {
-        RefreshPositions(field, 0);
-        RefreshPositions(leftScale, 0);
-        RefreshPositions(rightScale, 0);
+        RefreshPositions(field, 30);
+        RefreshPositions(leftScale, -40);
+        RefreshPositions(rightScale, -40);
         if (Imbalance() == 0 && WeighArea(field) == 0) // balanced scale + no unused weights
         {
             imbalanceCap = -1; //this should prevent any moves from occuring
@@ -108,7 +108,7 @@ public class ScalesManager : MonoBehaviour
             int weight = weights[i];
             var obj = Instantiate(templateWeight, field, true);
             obj.weight = weight;
-            obj.transform.localPosition = new Vector2(i * 50 + offset, 0);
+            obj.transform.localPosition = new Vector2(i * 50 + offset, 30);
             obj.GetComponent<Image>().sprite = weightSprites[weight-1];
             obj.GetComponent<Button>().onClick.AddListener(() => SelectWeight(obj));
         }
