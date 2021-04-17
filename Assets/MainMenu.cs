@@ -20,7 +20,7 @@ public class MainMenu : MonoBehaviour
         setVolumeSlider();
         volumeSlider.onValueChanged.AddListener(delegate { setVolumeSlider(); });
     }
-    public void PlayGame()
+    public void PlayGame() { 
          PlayerPrefs.SetInt("Level", 1);
          PlayerPrefs.SetInt("TutorialCompleted", 0);
         SceneManager.LoadScene("Main");
