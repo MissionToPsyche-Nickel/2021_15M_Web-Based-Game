@@ -23,14 +23,16 @@ public class GameOver : MonoBehaviour
     }*/
 
     public void RestartClick()
-    {   PlayerPrefs.DeleteAll();
+    {    PlayerPrefs.SetInt("Level", 1);
+         PlayerPrefs.SetInt("TutorialCompleted", 0);
         SceneManager.LoadScene("Main");
         Debug.Log("Main Menu Clicked...");
 
     }
 
     public void ExitClick()
-    {   PlayerPrefs.DeleteAll();
+    {    PlayerPrefs.SetInt("Level", 1);
+         PlayerPrefs.SetInt("TutorialCompleted", 0);
         SceneManager.LoadScene("Title");
         Debug.Log("Exit Clicked...");
 
