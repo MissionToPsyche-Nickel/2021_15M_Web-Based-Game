@@ -232,10 +232,10 @@ RectTransform:
   m_Father: {fileID: 1018676010}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -4, y: 98.6}
-  m_SizeDelta: {x: -263.02698, y: -216.17082}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 8, y: 83}
+  m_SizeDelta: {x: 313.1834, y: 72.08072}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &70500637
 MonoBehaviour:
@@ -305,7 +305,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.066037714, g: 0.06396105, b: 0.06396105, a: 1}
+  m_Color: {r: 0.990566, g: 0.990566, b: 0.990566, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -657,16 +657,16 @@ RectTransform:
   m_GameObject: {fileID: 154694642}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.8636634, y: 1.8636634, z: 1.8636634}
   m_Children:
   - {fileID: 516889478}
   m_Father: {fileID: 1018676010}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 19, y: -128}
-  m_SizeDelta: {x: -581.1572, y: -275.82074}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -2, y: -105}
+  m_SizeDelta: {x: 117.98599, y: 21.908524}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &154694644
 MonoBehaviour:
@@ -1172,8 +1172,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 10, y: 92}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -4, y: 102.7}
+  m_SizeDelta: {x: 0, y: -197.93018}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &407373973
 MonoBehaviour:
@@ -1197,10 +1197,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 4beb055f07aaff244873dec698d0363e, type: 3}
-    m_FontSize: 75
+    m_FontSize: 25
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 6
+    m_MinSize: 2
     m_MaxSize: 75
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -1208,7 +1208,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: GAME OVER!
+  m_Text: "Congratulations!\n You beat all the levels & reached Psyche!\n"
 --- !u!222 &407373974
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1355,8 +1355,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 5.9236145, y: 8}
-  m_SizeDelta: {x: -360.53827, y: -187.18764}
+  m_AnchoredPosition: {x: 5.899994, y: 18.9}
+  m_SizeDelta: {x: -158.41437, y: -203.86807}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &496703538
 MonoBehaviour:
@@ -1544,15 +1544,15 @@ RectTransform:
   m_GameObject: {fileID: 516889477}
   m_LocalRotation: {x: -0, y: -0, z: -0.0029214318, w: 0.99999577}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.4249, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 154694643}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -0.335}
   m_AnchorMin: {x: 0.069000006, y: 0.1692156}
   m_AnchorMax: {x: 0.8078417, y: 0.6316728}
-  m_AnchoredPosition: {x: 2.5, y: 1}
-  m_SizeDelta: {x: 65.01538, y: 59.07518}
+  m_AnchoredPosition: {x: 6.5, y: 0.19999695}
+  m_SizeDelta: {x: -29.65636, y: 10.588562}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &516889479
 MonoBehaviour:
@@ -1576,10 +1576,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 20
+    m_FontSize: 10
     m_FontStyle: 3
     m_BestFit: 0
-    m_MinSize: 2
+    m_MinSize: 0
     m_MaxSize: 40
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -1971,10 +1971,10 @@ RectTransform:
   m_Father: {fileID: 1018676010}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -2, y: 11.5}
-  m_SizeDelta: {x: -384.24582, y: -244.62917}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 224.80496, y: 54.253967}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &961381760
 MonoBehaviour:
@@ -2044,7 +2044,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.066037714, g: 0.06396105, b: 0.06396105, a: 1}
+  m_Color: {r: 0.990566, g: 0.978106, b: 0.978106, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2266,15 +2266,15 @@ RectTransform:
   m_GameObject: {fileID: 1166881609}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.81285, y: 0.81285, z: 0.81285}
   m_Children: []
   m_Father: {fileID: 1906267375}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.3948992, y: 0.4364627}
-  m_AnchorMax: {x: 0.65427524, y: 0.58941793}
-  m_AnchoredPosition: {x: 8, y: 2.1852}
-  m_SizeDelta: {x: 69.71585, y: 22.478611}
+  m_AnchorMin: {x: 0.012187635, y: 0}
+  m_AnchorMax: {x: 0.98781234, y: 1}
+  m_AnchoredPosition: {x: -3.4399986, y: -2.231699}
+  m_SizeDelta: {x: 162.0072, y: 41.34398}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1166881611
 MonoBehaviour:
@@ -2298,13 +2298,13 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 20
+    m_FontSize: 15
     m_FontStyle: 1
-    m_BestFit: 0
-    m_MinSize: 2
+    m_BestFit: 1
+    m_MinSize: 1
     m_MaxSize: 40
     m_Alignment: 4
-    m_AlignByGeometry: 0
+    m_AlignByGeometry: 1
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
@@ -2432,8 +2432,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.103135504, y: 0.24676129}
   m_AnchorMax: {x: 0.9511699, y: 1}
-  m_AnchoredPosition: {x: -8, y: -14}
-  m_SizeDelta: {x: 0.65483093, y: 3.716999}
+  m_AnchoredPosition: {x: -8.9, y: -8.1}
+  m_SizeDelta: {x: 0.65483093, y: 14.565399}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1279793977
 MonoBehaviour:
@@ -2526,8 +2526,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 27, y: -2}
-  m_SizeDelta: {x: 657.42816, y: 261.27704}
+  m_AnchoredPosition: {x: 1.7, y: 21}
+  m_SizeDelta: {x: 446.92145, y: 215.1666}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1331339785
 MonoBehaviour:
@@ -2551,27 +2551,27 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 20
+    m_FontSize: 15
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
-    m_MaxSize: 40
+    m_MaxSize: 105
     m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "This work was created in partial fulfillment of {{University Name}} Capstone
-    Course \u201C{{Course #}}\u2033. The work is a result of the Psyche Student Collaborations
-    component of NASA\u2019s Psyche Mission (https://psyche.asu.edu). \u201CPsyche:
-    A Journey to a Metal World\u201D [Contract number NNM16AA09C] is part of the
-    NASA Discovery Program mission to solar system targets. Trade names and trademarks
-    of ASU and NASA are used in this work for identification only. Their usage does
-    not constitute an official endorsement, either expressed or implied, by Arizona
-    State University or National Aeronautics and Space Administration. The content
-    is solely the responsibility of the authors and does not necessarily represent
-    the official views of ASU or NASA."
+  m_Text: "This work was created in partial fulfillment of Arizona State University
+    Capstone Course \u201CSER 402\u2033. The work is a result of the Psyche Student
+    Collaborations component of NASA\u2019s Psyche Mission (https://psyche.asu.edu).
+    \u201CPsyche: A Journey to a Metal World\u201D [Contract number NNM16AA09C] is
+    part of the NASA Discovery Program mission to solar system targets. Trade names
+    and trademarks of ASU and NASA are used in this work for identification only.
+    Their usage does not constitute an official endorsement, either expressed or
+    implied, by Arizona State University or National Aeronautics and Space Administration.
+    The content is solely the responsibility of the authors and does not necessarily
+    represent the official views of ASU or NASA."
 --- !u!222 &1331339786
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2704,8 +2704,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 8, y: -78}
-  m_SizeDelta: {x: -356.90308, y: -188.11841}
+  m_AnchoredPosition: {x: 7, y: -63}
+  m_SizeDelta: {x: -156.43417, y: -205.8474}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1357805703
 MonoBehaviour:
@@ -4199,16 +4199,16 @@ RectTransform:
   m_GameObject: {fileID: 1906267374}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.3739893, y: 1.3739893, z: 1.3739893}
   m_Children:
   - {fileID: 1166881610}
   m_Father: {fileID: 98010110}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 255.9, y: -133}
-  m_SizeDelta: {x: -638.9384, y: -290.39514}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 166.7, y: -114.81}
+  m_SizeDelta: {x: -82.40358, y: -20.629173}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1906267376
 MonoBehaviour:
@@ -4231,9 +4231,9 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 0}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 0.54509807}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5176471}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 0.39607844}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 0.34117648}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.6431373}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 0.63529414}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -4290,8 +4290,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.9254902}
-  m_RaycastTarget: 1
+  m_Color: {r: 1, g: 1, b: 1, a: 0.9529412}
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -4349,7 +4349,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -2.9999847, y: 1}
+  m_AnchoredPosition: {x: -3, y: 1}
   m_SizeDelta: {x: 228.19443, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1916023724
@@ -4428,10 +4428,10 @@ RectTransform:
   m_Father: {fileID: 1018676010}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 7.799988, y: -74.600006}
-  m_SizeDelta: {x: -478.69333, y: -266.55853}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -7, y: -61}
+  m_SizeDelta: {x: 241.08977, y: 55.320145}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1955461078
 MonoBehaviour:
@@ -4501,7 +4501,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.066037714, g: 0.06396105, b: 0.06396105, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
