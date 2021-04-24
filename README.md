@@ -8,5 +8,12 @@
 - Unlock all journal objects to complete the game and discover Psyche.
 
 ### Build Directions:
+This project was built using the Unity editor, utilizing unity libraries. Screen shot images of the follow steps can be found in the "Build Screenshots" folder. To build the project, refer to the following steps:
+1. Navigate to the file menu and select Build and Run. (Screenshot 1)
+2. By selecting build and run, the WebGL build will launch the game in your default web browser. (Screenshot 2)
+3. Build files will, by default, be located in the build folder, unless the save destination is changed. (Screenshot 3 and Screenshot 4)
+
+### Video Demo: 
+https://youtu.be/ZUPWtTFbDx4
 
 ## Contributors: Adam Hinrichs, Jacob Bement, Kelsey Cloud, Mark Sauve, Vignesh Subramanian
