@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+<<<<<<< HEAD:Assets/MainGameAssets/PlayerLevel.cs.meta
+guid: 3a2d80638dfa110428f97a054fa12c20
+=======
+guid: ad666f816e530c543b7cd53e16493bf2
+>>>>>>> development:Assets/GameOver.cs.meta
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

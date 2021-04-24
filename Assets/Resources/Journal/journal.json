@@ -1,0 +1,47 @@
+{
+    "pages":
+    [
+        {
+            "page": 0,
+            "title": "",
+            "image": "Journal/Images/PageZeroImage",
+            "text": "As you discover objects with your telescope they will be displayed here for you to learn more about them."
+        },
+        {
+            "page":1,
+            "title": "Discovery 1: Earth's Moon",
+            "image": "Journal/Images/PageOneImage",
+            "text": "Congratulations on your first discovery! The moon is our constant companion and only natural satellite. Over billions of years the surface of the moon has been repeatedly struck by asteroids, meteoroids, and comets leaving it covered in craters which we can see from Earth. During the Apollo moon missions 12 astronauts walked and drove on the moon."
+        },
+        {
+            "page": 2,
+            "title": "Discovery 2: Mars",
+            "image": "Journal/Images/PageTwoImage",
+            "text": "As far back as the ancient Babylonians and Egyptians humans have observed Mars. Galileo was the first to observe Mars through a telescope. Since that time Mars has been a favorite of amateur astronomers. Its famous red color is caused by the dust from iron rich rocks being kicked up into the atmosphere."
+        },
+        {
+            "page": 3,
+            "title": "Discovery 3: Saturn",
+            "image": "Journal/Images/PageThreeImage",
+            "text": "Saturn is gas giant as it is made of mostly hydrogen and helium. It is most famous for its rings which are made up of billions of pieces of rock and ice that stretch out 175,000 miles from the surface of the planet. Saturn also has at least 53 moons orbiting it."
+        },
+        {
+            "page": 4,
+            "title": "Discovery 4: The Sombrero Galaxy",
+            "image": "Journal/Images/PageFourImage",
+            "text": "Located 28 million light-years away from Earth in the constellation of Virgo, the Sombrero galaxy has an amazing spiral structure. It is believed that there is a black hole at its center."
+        },
+        {
+            "page": 5,
+            "title": "Discovery 5: The Asteroid Psyche",
+            "image": "Journal/Images/PageSixImage",
+            "text": "Psyche was discovered in 1852 by the Italian astronomer Annibale de Gasparis and named after the Greek goddess of the soul. Unlike most asteroids which are made of rock, Psyche is made mostly of metal. Scientists believe it may even be the remains of the core of an early planet."
+        },
+        {
+            "page": 6,
+            "title": "Discovery 6: The Crab Nebula",
+            "image": "Journal/Images/PageFiveImage",
+            "text": "The Crab Nebula was first observed by Chinese astronomers in 1054 CE who believed it to be a new star in the sky as it had appeared suddenly and shined so bright it could be seen during the daytime. It is now known that what they witnessed was as supernova, the explosion of a massive star at the end of its life."
+        }
+    ]
+}
