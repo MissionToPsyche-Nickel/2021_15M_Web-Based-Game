@@ -6,6 +6,7 @@
 - Doing so will fill up the progress bar, resulting in a transition to a mini game. 
 - Each mini game has in game directions; completing the minigame will unlock a journal object. 
 - Unlock all journal objects to complete the game and discover Psyche.
+- Access disclaimer information in game by pressing ESC button and clicking on disclaimer button.
 
 ### Build Directions:
 This project was built using the Unity editor, utilizing unity libraries. Screen shot images of the follow steps can be found in the "Build Screenshots" folder. To build the project, refer to the following steps:
