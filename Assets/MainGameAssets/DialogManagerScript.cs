@@ -11,6 +11,7 @@ public class DialogManagerScript : MonoBehaviour
     private Image portraitImage;
     private Text titleTextbox;
     private Text textTextbox;
+    private int tutorialStep = 0;
 
     private Transform[] visibilityList;
 
@@ -26,12 +27,23 @@ public class DialogManagerScript : MonoBehaviour
 
         if (PlayerPrefs.GetInt("TutorialCompleted") == 0)
         {
-            AddDialog("Psyche", "Welcome to the game!\nMy name is Psyche, and I'm a scientist with a particular interest in space. I will be guiding you through how to play.\nPress the arrow button to continue.");
-            AddDialog("Psyche", "Your goal is to complete your journal by identifying celestial objects with your telescope. You can open your journal using the button at the bottom left.");
-            AddDialog("Psyche", "The telescope is how you identify celestial objects.\nYou can control it using the up and down arrow keys, or W and S.");
-            AddDialog("Psyche", "Be sure to stay focused on the object for a few seconds while the progress bar fills up. Otherwise, you won’t get a good look at it.");
-            AddDialog("Psyche", "After you scan the object, you will be sent to a minigame.\nGood luck, and happy astronomy!");
-            PlayerPrefs.SetInt("TutorialCompleted", 1);
+            tutorialStep = PlayerPrefs.GetInt("TutorialStep", 0);
+
+            if (tutorialStep <= 0)
+                AddDialog("Psyche", "Welcome to the game!\nMy name is Psyche, and I'm a scientist with a particular interest in space. I will be guiding you through how to play.\nPress the arrow button to continue.");
+
+            if (tutorialStep <= 1)
+                AddDialog("Psyche", "Your goal is to complete your journal by identifying celestial objects with your telescope. You can open your journal using the button at the bottom left.");
+
+            if (tutorialStep <= 2)
+                AddDialog("Psyche", "The telescope is how you identify celestial objects.\nYou can control it using the up and down arrow keys, or W and S.");
+
+            if (tutorialStep <= 3)
+                AddDialog("Psyche", "Be sure to stay focused on the object for a few seconds while the progress bar fills up. Otherwise, you won’t get a good look at it.");
+
+            if (tutorialStep <= 4)
+                AddDialog("Psyche", "After you scan the object, you will be sent to a minigame.\nGood luck, and happy astronomy!");
+    
         }
         UpdateDialog();
 
@@ -123,6 +135,15 @@ public class DialogManagerScript : MonoBehaviour
     public void NextDialogPressed()
     {
         activeSnippet = null;
+
+        tutorialStep++;
+        PlayerPrefs.SetInt("TutorialStep", tutorialStep);
+
+        if (dialogQueue.Count == 0)
+        {
+            PlayerPrefs.SetInt("TutorialCompleted", 1);
+        }
+
         UpdateDialog();
     }
 
