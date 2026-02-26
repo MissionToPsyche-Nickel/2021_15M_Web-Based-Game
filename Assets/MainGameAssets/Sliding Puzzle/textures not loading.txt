@@ -1,2 +1,0 @@
-If a texture is not being loaded by LoadTexture(Texture2D), it is very likely that the image has not been selected for importing.
-To allow a texture to be loaded, first navigate to the texture. In the texture's Advanced tab, select "Read/Write Enabled".

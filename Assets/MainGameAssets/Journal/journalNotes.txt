@@ -1,8 +1,0 @@
-- Blank journal page used Verdana 14 non bold
-
-- Basic journal page
-	- Verdana 16 title, centered over image, non bold
-	- 24 pixels of vertical spacing
-	- image is 427x229
-	- 24 pixels of vertical spacing
-	- Verdana 12 text, left aligned with box width set to page width
