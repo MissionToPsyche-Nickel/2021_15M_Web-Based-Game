@@ -11,6 +11,7 @@ public class DialogManagerScript : MonoBehaviour
     private Image portraitImage;
     private Text titleTextbox;
     private Text textTextbox;
+    private int tutorialStep = 0;
 
     private Transform[] visibilityList;
 
@@ -26,25 +27,45 @@ public class DialogManagerScript : MonoBehaviour
 
         if (PlayerPrefs.GetInt("TutorialCompleted") == 0)
         {
-            AddDialog("Psyche", "Welcome to the game!\n My name is Psyche, and I'm a scientist with a particular interest in space. I will be guiding you through how to play. \nPress the arrow button to continue.");
-            AddDialog("Psyche", "Your goal is to complete your journal of celestial objects by identifying them with your telescope. You can open your journal with the button at the bottom left.");
-            AddDialog("Psyche", "The telescope is how you identify celestial objects.\nYou can control it using the up and down arrow keys, or W and S.");
-            AddDialog("Psyche", "Be sure to stay focused on the object for a few seconds while the progress bar fills up, otherwise you won't get a good look at it.");
-            AddDialog("Psyche", "After you scan the object, you will be sent to a minigame.\nGood luck, and happy astronomy!");
-            PlayerPrefs.SetInt("TutorialCompleted", 1);
+            tutorialStep = PlayerPrefs.GetInt("TutorialStep", 0);
+
+            if (tutorialStep <= 0)
+                AddDialog("Psyche", "Welcome to the game!\nMy name is Psyche, and I'm a scientist with a particular interest in space. I will be guiding you through how to play.\nPress the arrow button to continue.");
+
+            if (tutorialStep <= 1)
+                AddDialog("Psyche", "Your goal is to complete your journal by identifying celestial objects with your telescope. You can open your journal using the button at the bottom left.");
+
+            if (tutorialStep <= 2)
+                AddDialog("Psyche", "The telescope is how you identify celestial objects.\nYou can control it using the up and down arrow keys, or W and S.");
+
+            if (tutorialStep <= 3)
+                AddDialog("Psyche", "Be sure to stay focused on the object for a few seconds while the progress bar fills up. Otherwise, you won’t get a good look at it.");
+
+            if (tutorialStep <= 4)
+                AddDialog("Psyche", "After you scan the object, you will be sent to a minigame.\nGood luck, and happy astronomy!");
+    
         }
         UpdateDialog();
 
         if (PlayerPrefs.GetInt("Level") == 2)
         {
-            AddDialog("Psyche", "Now that you’ve learned how to use your telescope, the world, or… the universe is your oyster! " +
-                "See what else you can find. " +
-                "Remember, find and focus on the distant twinkle to fill the progress bar.");
+            string levelKey = "Level2DialogStep";
+            int levelStep = PlayerPrefs.GetInt(levelKey, 0);
+            if(levelStep <= 0)
+            AddDialog(
+            "Psyche",
+            "Now that you’ve learned how to use your telescope, the world—or… the universe—is your oyster! " +
+            "See what else you can find. " +
+            "Remember, find and focus on the distant twinkle to fill the progress bar."
+        );
         }
         UpdateDialog();
 
         if (PlayerPrefs.GetInt("Level") == 3)
         {
+            string levelKey = "Level3DialogStep";
+            int levelStep = PlayerPrefs.GetInt(levelKey, 0);
+            if(levelStep <= 0)
             AddDialog("Psyche", "What other planets can you find?");
         }
 
@@ -52,9 +73,15 @@ public class DialogManagerScript : MonoBehaviour
 
         if (PlayerPrefs.GetInt("Level") == 4)
         {
-            AddDialog("Psyche", "Now that you’ve learned about a few planets in our solar system, let’s focus on finding some new galaxies. " +
-                "Galaxies are huge clusters of solar systems, stars, and gasses. " +
-                "The galaxy that we are in is called the Milky Way galaxy.");
+            string levelKey = "Level4DialogStep";
+            int levelStep = PlayerPrefs.GetInt(levelKey, 0);
+            if(levelStep <= 0)
+            AddDialog(
+            "Psyche",
+            "Now that you’ve learned about a few planets in our solar system, let’s focus on finding some new galaxies. " +
+            "Galaxies are huge clusters of solar systems, stars, and gases. " +
+            "The galaxy that we are in is called the Milky Way galaxy."
+        );
         }
 
 
@@ -62,13 +89,27 @@ public class DialogManagerScript : MonoBehaviour
 
         if (PlayerPrefs.GetInt("Level") == 5)
         {
-            AddDialog("Psyche", "The last thing I want to show you before you go is an asteroid named after the Greek goddess, Psyche." +
-                "That name should sound familiar, since I was named after this asteroid!");
-            AddDialog("Psyche", "Why is this asteroid important? Well, it’s one of a kind and we stand to learn a lot about it by studying it. " +
-                "In fact, NASA has taken a special interest in Psyche and they are planning an expedition to study it in space! " +
-                "There’s a lot more about it, but you’ll have to complete the minigame to learn more.");
-            AddDialog("Psyche", "By the way, because Psyche is so far away, you won’t be able to see it through that Hobby Telescope of yours. " +
-                "Instead, we’ll use the Very Large Telescope located in Chile. Give it a go!");
+            string levelKey = "Level5DialogStep";
+            int levelStep = PlayerPrefs.GetInt(levelKey, 0);
+            if(levelStep <= 0)
+            AddDialog(
+                "Psyche",
+                "The last thing I want to show you before you go is an asteroid named after the Greek goddess Psyche. " +
+                "That name should sound familiar, since I was named after this asteroid!"
+            );
+            if(levelStep <= 1)
+            AddDialog(
+                "Psyche",
+                "Why is this asteroid important? Well, it’s one of a kind, and we stand to learn a lot about it by studying it. " +
+                "In fact, NASA has taken a special interest in Psyche and is planning an expedition to study it in space! " +
+                "There’s a lot more to learn, but you’ll have to complete the minigame to find out."
+            );
+            if(levelStep <= 2)
+            AddDialog(
+                "Psyche",
+                "By the way, Psyche is so far away that you won’t be able to see it through that Hobby Telescope of yours. " +
+                "Instead, we’ll use the Very Large Telescope located in Chile. Give it a go!"
+            );    
         }
     }
 
@@ -106,6 +147,27 @@ public class DialogManagerScript : MonoBehaviour
     public void NextDialogPressed()
     {
         activeSnippet = null;
+
+        tutorialStep++;
+        PlayerPrefs.SetInt("TutorialStep", tutorialStep);
+        
+
+        if (dialogQueue.Count == 0)
+        {
+            PlayerPrefs.SetInt("TutorialCompleted", 1);
+        }
+
+        //level logic
+        int currentLevel = PlayerPrefs.GetInt("Level");
+        if(currentLevel>=2 && currentLevel <= 5)
+        {
+            string levelKey = "Level" + currentLevel + "DialogStep";
+
+            int levelStep = PlayerPrefs.GetInt(levelKey, 0);
+            levelStep++;
+            PlayerPrefs.SetInt(levelKey, levelStep);
+        }
+
         UpdateDialog();
     }
 

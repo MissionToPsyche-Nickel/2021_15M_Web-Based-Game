@@ -11,14 +11,17 @@ public class SliderPuzzleManager : MonoBehaviour
     public int boardSize = 4;
     public RectTransform prefabTile;
     public Texture2D image;
+    public GameObject instructionText;
 
     private int[][] boardState;
     private Transform[][] boardDisplay;
     private bool completed = false;
+    
 
     // Start is called before the first frame update
     void Start()
     {
+        instructionText.SetActive(false);
         boardState = new int[boardSize][];
         boardDisplay = new Transform[boardSize][];
         for (int i = 0; i < boardSize; i++)
@@ -46,7 +49,15 @@ public class SliderPuzzleManager : MonoBehaviour
         ShuffleBoard();
         RefreshPositions();
         LoadRandomTexture();
+        instructionText.SetActive(true);
+        // StartCoroutine(ShowInstructions());
     }
+
+    IEnumerator ShowInstructions()
+{
+    yield return new WaitForSeconds(2f);
+    instructionText.SetActive(true);
+}
 
     // Update is called once per frame
     void Update()
