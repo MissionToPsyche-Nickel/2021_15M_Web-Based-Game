@@ -49,6 +49,9 @@ public class DialogManagerScript : MonoBehaviour
 
         if (PlayerPrefs.GetInt("Level") == 2)
         {
+            string levelKey = "Level2DialogStep";
+            int levelStep = PlayerPrefs.GetInt(levelKey, 0);
+            if(levelStep <= 0)
             AddDialog(
             "Psyche",
             "Now that you’ve learned how to use your telescope, the world—or… the universe—is your oyster! " +
@@ -60,6 +63,9 @@ public class DialogManagerScript : MonoBehaviour
 
         if (PlayerPrefs.GetInt("Level") == 3)
         {
+            string levelKey = "Level3DialogStep";
+            int levelStep = PlayerPrefs.GetInt(levelKey, 0);
+            if(levelStep <= 0)
             AddDialog("Psyche", "What other planets can you find?");
         }
 
@@ -67,6 +73,9 @@ public class DialogManagerScript : MonoBehaviour
 
         if (PlayerPrefs.GetInt("Level") == 4)
         {
+            string levelKey = "Level4DialogStep";
+            int levelStep = PlayerPrefs.GetInt(levelKey, 0);
+            if(levelStep <= 0)
             AddDialog(
             "Psyche",
             "Now that you’ve learned about a few planets in our solar system, let’s focus on finding some new galaxies. " +
@@ -80,19 +89,22 @@ public class DialogManagerScript : MonoBehaviour
 
         if (PlayerPrefs.GetInt("Level") == 5)
         {
+            string levelKey = "Level5DialogStep";
+            int levelStep = PlayerPrefs.GetInt(levelKey, 0);
+            if(levelStep <= 0)
             AddDialog(
                 "Psyche",
                 "The last thing I want to show you before you go is an asteroid named after the Greek goddess Psyche. " +
                 "That name should sound familiar, since I was named after this asteroid!"
             );
-
+            if(levelStep <= 1)
             AddDialog(
                 "Psyche",
                 "Why is this asteroid important? Well, it’s one of a kind, and we stand to learn a lot about it by studying it. " +
                 "In fact, NASA has taken a special interest in Psyche and is planning an expedition to study it in space! " +
                 "There’s a lot more to learn, but you’ll have to complete the minigame to find out."
             );
-
+            if(levelStep <= 2)
             AddDialog(
                 "Psyche",
                 "By the way, Psyche is so far away that you won’t be able to see it through that Hobby Telescope of yours. " +
@@ -138,10 +150,22 @@ public class DialogManagerScript : MonoBehaviour
 
         tutorialStep++;
         PlayerPrefs.SetInt("TutorialStep", tutorialStep);
+        
 
         if (dialogQueue.Count == 0)
         {
             PlayerPrefs.SetInt("TutorialCompleted", 1);
+        }
+
+        //level logic
+        int currentLevel = PlayerPrefs.GetInt("Level");
+        if(currentLevel>=2 && currentLevel <= 5)
+        {
+            string levelKey = "Level" + currentLevel + "DialogStep";
+
+            int levelStep = PlayerPrefs.GetInt(levelKey, 0);
+            levelStep++;
+            PlayerPrefs.SetInt(levelKey, levelStep);
         }
 
         UpdateDialog();
