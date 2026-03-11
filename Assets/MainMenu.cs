@@ -21,8 +21,14 @@ public class MainMenu : MonoBehaviour
         volumeSlider.onValueChanged.AddListener(delegate { setVolumeSlider(); });
     }
     public void PlayGame() { 
-         PlayerPrefs.SetInt("Level", 1);
-         PlayerPrefs.SetInt("TutorialCompleted", 0);
+        PlayerPrefs.SetInt("Level", 1);
+        PlayerPrefs.SetInt("TutorialCompleted", 0);
+        PlayerPrefs.SetInt("TutorialStep", 0);
+        PlayerPrefs.SetInt("Level2DialogStep", 0);
+        PlayerPrefs.SetInt("Level3DialogStep", 0);
+        PlayerPrefs.SetInt("Level4DialogStep", 0);
+        PlayerPrefs.SetInt("Level5DialogStep", 0);
+        PlayerPrefs.Save();
         SceneManager.LoadScene("Main");
     }
 
