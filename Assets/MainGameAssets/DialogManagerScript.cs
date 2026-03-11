@@ -167,7 +167,7 @@ public class DialogManagerScript : MonoBehaviour
             levelStep++;
             PlayerPrefs.SetInt(levelKey, levelStep);
         }
-
+        PlayerPrefs.Save();
         UpdateDialog();
     }
 
